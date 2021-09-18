@@ -10,7 +10,8 @@
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="material-icons prefix">account_circle</i>
-						<input id="username" name="username" type="text" class="validate">
+						<input id="username" name="username" type="text" minlength="5"
+                            maxlength="15" class="validate" required>
 						<label for="username">Username</label>
 					</div>
                 </div>
@@ -18,14 +19,15 @@
                 <div class="row">
                     <div class="input-field col s12">
 						<i class="material-icons prefix">password</i>
-                        <input id="password" name="password" type="password" class="validate">
+                        <input id="password" name="password" type="password" minlength="5" 
+                            maxlength="15" class="validate" required class="validate">
                         <label for="password">Password</label>
                     </div>
                 </div>
                 <!-- register -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
-                        Register <i class="material-icons prefix">register</i>
+                        Submit <i class="material-icons prefix">register</i>
                     </button>
                 </div>
             </div>
