@@ -23,8 +23,9 @@ def get_serviceReports():
     return render_template("serviceReports.html", serviceReports = serviceReports)
 
 
-def hello():
-    return "Greetings"
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
 
 
 if __name__ == "__main__":
