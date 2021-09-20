@@ -3,12 +3,25 @@
 
 
     {% for serviceReport in serviceReports %}
-        {{ serviceReport.customer_name}}<br>
-        {{ serviceReport.engineer_name}}<br>
-        {{ serviceReport.date_received}}<br>
-        {{ serviceReport.machine_type}}<br>
-        {{ serviceReport.fault_description}}<br>
-        {{ serviceReport.action_taken}}<br>
-        {{ serviceReport.parts_used}}<br>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card light-blue darken-1">
+                <div class="card-content white-text">
+                <span class="card-title">Customer Name:  {{ serviceReport.customer_name}}</span>
+                <span class="card-title">Engineer Name:  {{ serviceReport.engineer_name}}</span>
+                <span class="card-title">Date Received:  {{ serviceReport.date_received}}</span>
+                <span class="card-title">Machine Type:  {{ serviceReport.machine_type}}</span>
+                <span class="card-title">Fault Description:  {{ serviceReport.fault_description}}</span>
+                <span class="card-title">Action Taken:  {{ serviceReport.action_taken}}</span>
+                <span class="card-title">Parts Used:  {{ serviceReport.parts_used}}</span>
+                </div>
+                <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
     {% endfor %}
 {% endblock %}
