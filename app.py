@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 @app.route("/") 
 @app.route("/get_serviceReports")
 def get_serviceReports():
-    serviceReports = mongo.db.serviceReports.find()
+    serviceReports = list(mongo.db.serviceReports.find())
     return render_template("serviceReports.html", serviceReports = serviceReports)
 
 
