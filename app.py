@@ -97,8 +97,8 @@ def logout():
 
 @app.route("/add_record")
 def add_record():
-    return render_template("add_record.html")
-
+    usernames = mongo.db.users.find().sort("username", 1)
+    return render_template("add_record.html", usernames=usernames)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

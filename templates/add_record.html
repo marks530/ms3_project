@@ -8,6 +8,19 @@
     <form class="col s12" method="POST" action="">
         <div class="row">
             <div class="input-field col s12">
+                <i class="material-icons prefix">build</i>
+                <select id="username" name="username" class="validate" required>
+                  <option value="" disabled selected>Select Engineer Name</option>
+                  {% for username in usernames %}
+                        <option value="{{ username.username }}">{{ username.username }}</option>
+                  {% endfor %}
+                </select>
+                <label for="username">Engineer</label>
+              </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
                 <input id="customer_name" name="customer_name" minlength="5" maxlength="50"
                     type="text" class="validate" required>
@@ -17,9 +30,9 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">build</i>
-                <textarea id="engineer_name" name="engineer_name" minlength="5"
+                <textarea id="fault_description" name="fault_description" minlength="5"
                     maxlength="200" class="materialize-textarea validate" required></textarea>
-                <label for="engineer_name">Engineer Name</label>
+                <label for="fault_description">Fault Description</label>
             </div>
         </div>
         <div class="row">
@@ -28,6 +41,12 @@
                 <input id="date_received" name="date_received" type="text" 
                 class="datepicker validate" required>
                 <label for="date_received">Date Received</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">build</i>
+                <textarea id="action_taken" name="action_taken" minlength="5"
+                    maxlength="200" class="materialize-textarea validate" required></textarea>
+                <label for="action_taken">Action Taken</label>
             </div>
         </div>
         <div class="row">
