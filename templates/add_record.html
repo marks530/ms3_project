@@ -5,7 +5,8 @@
 
 
 <div class="row card-panel grey lighten-5">
-    <form class="col s12" method="POST" action="">
+    <form class="col s12" method="POST" action="{{ url_for('add_record') }}">
+        <!-- user selection -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">build</i>
@@ -18,7 +19,7 @@
                 <label for="username">Engineer</label>
               </div>
         </div>
-        
+        <!-- customer name -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
@@ -27,6 +28,24 @@
                 <label for="customer_name">Customer Name</label>
             </div>
         </div>
+        <!-- date received -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">date_range</i>
+                <input id="date_received" name="date_received" type="text" 
+                class="datepicker validate" required>
+                <label for="date_received">Date Received</label>
+            </div>
+            <!-- machine type-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">build</i>
+                    <textarea id="machine_type" name="machine_type" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <label for="machine_type">Machine Type</label>
+                </div>
+            </div>
+            <!-- fault description-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">build</i>
@@ -35,13 +54,7 @@
                 <label for="fault_description">Fault Description</label>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">date_range</i>
-                <input id="date_received" name="date_received" type="text" 
-                class="datepicker validate" required>
-                <label for="date_received">Date Received</label>
-            </div>
+            <!-- action taken -->
             <div class="input-field col s12">
                 <i class="material-icons prefix">build</i>
                 <textarea id="action_taken" name="action_taken" minlength="5"
@@ -49,6 +62,14 @@
                 <label for="action_taken">Action Taken</label>
             </div>
         </div>
+        <!-- parts used -->
+        <div class="input-field col s12">
+            <i class="material-icons prefix">build</i>
+            <textarea id="parts_used" name="parts_used" minlength="5"
+                maxlength="200" class="materialize-textarea validate" required></textarea>
+            <label for="parts_used">Parts Used</label>
+        </div>
+        <!-- is resolved lever -->
         <div class="row">
             <div class="input-field col s12">
                 <div class="switch">
@@ -59,6 +80,15 @@
                         Is Resolved
                     </label>
                 </div>
+            </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    Add Record <i class="material-icons prefix">date_range></i>
+                </button>
+
             </div>
         </div>
     </form>

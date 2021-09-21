@@ -95,8 +95,24 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-@app.route("/add_record")
+@app.route("/add_record", methods=["GET","POST"])
 def add_record():
+    if request.method == "POST":
+        is_resolved = "Yes" if request.form.get("is_resolved") else "No"
+        record = {
+            "engineer_name": request.form.get("username"),
+            "customer_name": request.form.get("customer_name"),
+            "date_received": request.form.get("date_received"),
+            "machine_type": request.form.get("machine_type"),
+            "fault_description": request.form.get("fault_description"),
+            "action_taken": request.form.get("action_taken"),
+            "parts_used": request.form.get("parts_used"),
+            "is_resolved": request.form.get("is_resolved")
+
+        }
+        mongo.db.serviceReports.insert_one(record)
+        flash("Record successfully added")
+        return redirect(url_for("get_serviceReports"))
     usernames = mongo.db.users.find().sort("username", 1)
     return render_template("add_record.html", usernames=usernames)
 
