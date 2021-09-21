@@ -111,7 +111,7 @@ def add_record():
 
         }
         mongo.db.serviceReports.insert_one(record)
-        flash("Record successfully added")
+        flash("Record Successfully Added")
         return redirect(url_for("get_serviceReports"))
     usernames = mongo.db.users.find().sort("username", 1)
     return render_template("add_record.html", usernames=usernames)

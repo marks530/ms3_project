@@ -36,9 +36,21 @@ Here is the deployed version on the site :
 
 ## Project Goals
 
-The goal of the project is to provide a web based application to groups of casual golfers. The application will offer a means of collecting the scores of golf players who have just finished playing a round of golf and wish to submit their scores to calculate the winner of a competition. The player will enter their score (in golf strokes) for each golf hole and be given a total of the strokes for the round.
-As this is a project to be completed for a Milestone Project for the Code Institute the goal is to create an interactive website demonstrating this skills learn in the second phase of the course.
-The project was created using HTML CSS and JavaScript and is ready for further development. I would like very much to develop the project using the new skills that I will learn in the next stages of the course such as adding a database to store user statistics. This can be done back-end applications and using the Python language.
+The goal of the project is to provide a web based application to access a database with Create, Read, Update and Delete functionality.
+I have followed Code Inititute 
+
+
+* Data handling: Build a database in MongoDB using the Flask Python web application framework
+* Database structure: Design a structure that matches requirements in this case a non-relational database
+* User functionality: Create Read Update and Delete records through the web interface
+* Use of technologies: Use HTML and custom CSS for the website's front-end
+* Structure: Incorporate a main navigation menu and organised layout
+* Documentation: Write a README.md file
+* Version control: Use Git & GitHub for version control
+* Attribution: Maintain clear separation between code written by you and code from external sources
+* Deployment: Deploy the web application to cloud based host (Heroku)
+* Make sure to not include any passwords or secret keys in the project repository
+
 ## User Goals
 
 The user of the site will be initially be the organizer of the event usually the captain of the golf society. The captain will set up the event and he will then instruct the competitors to log in with their names and be taken to the score entry page.
