@@ -116,6 +116,13 @@ def add_record():
     usernames = mongo.db.users.find().sort("username", 1)
     return render_template("add_record.html", usernames=usernames)
 
+@app.route("/edit_record/<serviceReport_id>", methods=["GET", "POST"])
+def edit_record(serviceReport_id):
+    serviceReport = mongo.db.serviceReports.find_one({"_id": ObjectId(serviceReport_id)})
+    serviceReports = mongo.db.serviceReports.find()
+    return render_template("edit_record.html", serviceReport=serviceReport, serviceReports = serviceReports)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
      port=int(os.environ.get("PORT")), 
