@@ -3,8 +3,8 @@
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-<h1 align="center">Python and DAta Centric Developement Milestone 3 Project 
-<h2 align="center">Create a Service Department Database :robot: :golf: </h2>
+<h1 align="center">Python and Data Centric Developement Milestone 3 Project 
+<h2 align="center">Create a Service Department Database :robot: :engineer: </h2>
 
 
 Here is the deployed version on the site : 
@@ -31,6 +31,7 @@ Here is the deployed version on the site :
 	- [Acknowledgements](#acknowledgements)
 - [**Footnote**](#footnote)    
 ## Project Introduction
+The web application created for the project Python and Data Centric Developement Milestone 3 is designed for engineering companies who have a sales and service team. From my previous experience working as a service engineer I realise the value of having a record of every service call and the actions taken to resolve the problem. A database that recorded the service history each piece of equipment with the customer infomation would be a huge asset to these companies
 
 
 
