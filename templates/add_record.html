@@ -83,9 +83,11 @@
                 </div>
             </div>
         </div>
-        <!-- submit button -->
+        <!-- submit and cancel buttons -->
         <div class="row">
             <div class="col s12 center-align">
+                <a href="{{ url_for('get_serviceReports') }}" class="btn-large red text-shadow">
+                    Cancel <i class="material-icons prefix">error</i>></a>
                 <button type="submit" class="btn-large light-blue darken-1 text-shadow">
                     Add Record <i class="material-icons prefix">date_range></i>
                 </button>
