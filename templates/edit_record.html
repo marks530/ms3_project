@@ -6,68 +6,65 @@
 
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('edit_record', serviceReport_id=serviceReport._id) }}">
-        <!-- user selection -->
+
+        <!-- engineer name -->
         <div class="row">
-            <div class="input-field col s12"> 
-                <i class="material-icons prefix">build</i>
-                <select id="username" name="username" class="validate" required>
-                  <option value="" disabled selected>Select Engineer Name</option>
-                  {% for username in usernames %}
-                        <option value="{{ username.username }}">{{ username.username }}</option>
-                  {% endfor %}
-                </select>
-                <label for="username">Engineer</label>
-              </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="engineer_name" name="engineer_name" minlength="5" maxlength="50"
+                    value="{{ serviceReport.engineer_name }}" type="text" class="validate" required>
+                <label for="engineer_name">Engineer Name</label>
+            </div>
         </div>
+        
         <!-- customer name -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
                 <input id="customer_name" name="customer_name" minlength="5" maxlength="50"
-                    type="text" class="validate" required>
+                    value="{{ serviceReport.customer_name }}" type="text" class="validate" required>
                 <label for="customer_name">Customer Name</label>
             </div>
         </div>
-        <!-- date received -->
+        <!-- date received cannot be altered -->
+        
+            <!-- machine type-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">date_range</i>
-                <input id="date_received" name="date_received" type="text" 
-                class="datepicker validate" required>
-                <label for="date_received">Date Received</label>
+                <i class="material-icons prefix">build</i>
+                <input id="machine_type" name="machine_type" minlength="5"
+                    maxlength="50" value="{{ serviceReport.machine_type }}" type="text" class="validate" required>
+                <label for="machine_type">Machine Type</label>
             </div>
-            <!-- machine type-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">build</i>
-                    <textarea id="machine_type" name="machine_type" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="machine_type">Machine Type</label>
-                </div>
-            </div>
+        </div>
             <!-- fault description-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">build</i>
-                <textarea id="fault_description" name="fault_description" minlength="5"
-                    maxlength="200" class="materialize-textarea validate" required></textarea>
+                <input id="fault_description" name="fault_description" minlength="5"
+                    maxlength="100" value="{{ serviceReport.fault_description }}" type="text"class="validate" required>
                 <label for="fault_description">Fault Description</label>
             </div>
         </div>
             <!-- action taken -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">build</i>
+                    <input id="action_taken" name="action_taken" minlength="5"
+                        maxlength="50" value="{{ serviceReport.action_taken }}" type="text" class="validate" required>
+                    <label for="action_taken">Action Taken</label>
+                </div>
+            </div>
+          
+        <!-- parts used -->
+        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">build</i>
-                <textarea id="action_taken" name="action_taken" minlength="5"
-                    maxlength="200" class="materialize-textarea validate" required></textarea>
-                <label for="action_taken">Action Taken</label>
+                <input id="parts_used" name="parts_used" minlength="5"
+                    maxlength="50" value="{{ serviceReport.parts_used }}" type="text" class="validate" required>
+                <label for="parts_used">Parts Used</label>
             </div>
         </div>
-        <!-- parts used -->
-        <div class="input-field col s12">
-            <i class="material-icons prefix">build</i>
-            <textarea id="parts_used" name="parts_used" minlength="5"
-                maxlength="200" class="materialize-textarea validate" required></textarea>
-            <label for="parts_used">Parts Used</label>
         </div>
         <!-- is resolved lever -->
         <div class="row">
@@ -86,6 +83,9 @@
         <!-- submit button -->
         <div class="row">
             <div class="col s12 center-align">
+                <!-- cancel button -->
+                <a href="{{ url_for('get_serviceReports') }}" class="btn-large red text-shadow">
+                Cancel <i class="material-icons prefix">error</i>></a>
                 <button type="submit" class="btn-large light-blue darken-1 text-shadow">
                     Edit Record <i class="material-icons prefix">date_range></i>
                 </button>

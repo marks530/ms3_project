@@ -119,7 +119,7 @@ def add_record():
 @app.route("/edit_record/<serviceReport_id>", methods=["GET", "POST"])
 def edit_record(serviceReport_id):
     serviceReport = mongo.db.serviceReports.find_one({"_id": ObjectId(serviceReport_id)})
-    serviceReports = mongo.db.serviceReports.find()
+    serviceReports = list(mongo.db.serviceReports.find())
     return render_template("edit_record.html", serviceReport=serviceReport, serviceReports = serviceReports)
 
 
