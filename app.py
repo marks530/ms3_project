@@ -118,6 +118,22 @@ def add_record():
 
 @app.route("/edit_record/<serviceReport_id>", methods=["GET", "POST"])
 def edit_record(serviceReport_id):
+    if request.method == "POST":
+        is_resolved = "Yes" if request.form.get("is_resolved") else "No"
+        submit= {
+            "engineer_name": request.form.get("username"),
+            "customer_name": request.form.get("customer_name"),
+            "date_received": request.form.get("date_received"),
+            "machine_type": request.form.get("machine_type"),
+            "fault_description": request.form.get("fault_description"),
+            "action_taken": request.form.get("action_taken"),
+            "parts_used": request.form.get("parts_used"),
+            "is_resolved": request.form.get("is_resolved")
+
+        }
+        mongo.db.serviceReports.update({"_id": ObjectId(serviceReport_id)}, submit)
+        flash("Record Successfully Updated")
+
     serviceReport = mongo.db.serviceReports.find_one({"_id": ObjectId(serviceReport_id)})
     serviceReports = list(mongo.db.serviceReports.find())
     return render_template("edit_record.html", serviceReport=serviceReport, serviceReports = serviceReports)
