@@ -138,6 +138,12 @@ def edit_record(serviceReport_id):
     serviceReports = list(mongo.db.serviceReports.find())
     return render_template("edit_record.html", serviceReport=serviceReport, serviceReports = serviceReports)
 
+@app.route("/delete_record/<serviceReport_id>")
+def delete_record(serviceReport_id):
+    mongo.db.serviceReports.remove({"_id": ObjectId(serviceReport_id)})
+    flash("Record Successfully Deleted")
+    return redirect(url_for("get_serviceReports"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
