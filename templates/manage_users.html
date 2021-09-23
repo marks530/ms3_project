@@ -4,6 +4,16 @@
 <h3 class="light-blue-text text-darken-4 center-align">Manage Users</h3>
 
 <div class="row">
+    <div class="col s12 center-align">
+
+        <a href="{{ url_for('add_user') }}" class=btn large light-blue darken-2 text-shadow>
+            Add User <i class="material-icons right">add_box</i>
+        </a>
+    </div>
+
+</div>
+
+<div class="row">
     {% for user in users %}
     <div class="col s12 m3">
         <div class="card blue darken-1 text-shadow center-align">
@@ -11,8 +21,8 @@
             <span class="card-title">{{ user.username }}</span>
             </div>
             <div class="card-action">
-            <a href="#" class="btn green accent-4">Edit</a>
-            <a href="#" class="btn red accent-4">Delete</a>
+            <a href="#" class="btn green accent-4">Edit password</a>
+            <a href="#" class="btn red accent-4">Remove User</a>
             </div>
         </div>
     </div>

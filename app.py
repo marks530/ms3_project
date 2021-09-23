@@ -149,6 +149,18 @@ def manage_users():
     users = list(mongo.db.users.find().sort("username", 1))
     return render_template("manage_users.html", users=users)
 
+@app.route("/add_user", methods=["GET", "POST"])
+def add_user():
+    if request.method == "POST":
+        user = {
+            "username": request.form.get("username")
+        }
+        mongo.db.users.insert_one(user)
+        flash("New User Added")
+        return redirect(url_for("manage_users"))
+               
+    return render_template("add_user.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
