@@ -144,6 +144,11 @@ def delete_record(serviceReport_id):
     flash("Record Successfully Deleted")
     return redirect(url_for("get_serviceReports"))
 
+@app.route("/manage_users")
+def manage_users():
+    users = list(mongo.db.users.find().sort("username", 1))
+    return render_template("manage_users.html", users=users)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
