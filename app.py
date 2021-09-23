@@ -121,7 +121,7 @@ def edit_record(serviceReport_id):
     if request.method == "POST":
         is_resolved = "Yes" if request.form.get("is_resolved") else "No"
         submit= {
-            "engineer_name": request.form.get("username"),
+            "engineer_name": request.form.get("engineer_name"),
             "customer_name": request.form.get("customer_name"),
             "date_received": request.form.get("date_received"),
             "machine_type": request.form.get("machine_type"),

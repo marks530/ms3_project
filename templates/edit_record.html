@@ -5,17 +5,18 @@
 
 
 <div class="row card-panel grey lighten-5">
-    <form class="col s12" method="POST" action="{{ url_for('edit_record', serviceReport_id=serviceReport._id) }}">
+    <form class="col s12" method="POST" action="{{ url_for('edit_record', serviceReport_id=serviceReport._id,) }}">
 
         <!-- engineer name -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">account_circle</i>
+                <i class="material-icons prefix">build</i>
                 <input id="engineer_name" name="engineer_name" minlength="5" maxlength="50"
                     value="{{ serviceReport.engineer_name }}" type="text" class="validate" required>
-                <label for="engineer_name">Engineer Name</label>
-            </div>
+                <label for="engineer_name">Engineer</label>
+              </div>
         </div>
+        
         
         <!-- customer name -->
         <div class="row">
@@ -26,7 +27,15 @@
                 <label for="customer_name">Customer Name</label>
             </div>
         </div>
-        <!-- date received cannot be altered -->
+        <!-- date received -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">calendar</i>
+                <input id="date_received" name="date_received" 
+                 value="{{ serviceReport.date_received }}" type="text" class="datepicker validate" required>
+                <label for="date_received">date received</label>
+            </div>
+        </div>
         
             <!-- machine type-->
         <div class="row">
