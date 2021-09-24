@@ -23,6 +23,12 @@ def get_serviceReports():
     serviceReports = list(mongo.db.serviceReports.find())
     return render_template("serviceReports.html", serviceReports = serviceReports)
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    serviceReports = list(mongo.db.serviceReports.find({"$text": {"$search": query}}))
+    return render_template("serviceReports.html", serviceReports = serviceReports)
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
