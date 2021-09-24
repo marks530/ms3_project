@@ -177,6 +177,11 @@ def edit_user(user_id):
     user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
     return render_template("edit_user.html", user=user)
 
+@app.route("/delete_user/<user_id>")
+def delete_user(user_id):
+    mongo.db.users.remove({"_id": ObjectId(user_id)})
+    flash("User Removed Successfully")
+    return redirect(url_for("manage_users"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
