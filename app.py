@@ -163,6 +163,21 @@ def add_user():
     return render_template("add_user.html")
 
 
+@app.route("/edit_user/<user_id>", methods=["GET", "POST"])
+def edit_user(user_id):
+    if request.method == "POST":
+        submit = {
+            "username": request.form.get("username"),
+            "password": generate_password_hash(request.form.get ("password"))
+        }
+        mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
+        flash("User Successfully Updated")
+        return redirect(url_for("manage_users"))
+
+    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    return render_template("edit_user.html", user=user)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
      port=int(os.environ.get("PORT")), 
