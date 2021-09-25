@@ -17,6 +17,7 @@ Here is the deployed version on the site :
 - [**User Goals**](#user-goals)
 - [**User Stories**](#user-stories)
 - [**Site Owner Goals**](#site-owner-goals)
+- [**Database**]
 - [**UX**](#ux)
 - [**Design Choices**](#design-choices)
 - [**Wireframes**](#wireframes)
@@ -74,18 +75,53 @@ view any outstanding service calls. The "parts used" section of the database is 
 
 The Service Manager as administrator of the application will be responsible for introducing new users to the application and creating their user accounts and passwords. Each time a new user requires access to the web app the manager creates a new account and issue the credentials to the new user.
 He is the only user with full access to the databable and have the ability to delete accounts and records.
+
 The service engineer will be the main user of the application. He/she will be able to
 
 * Create a service report each time an on-site service call is made 
+* Add specific detail of successful repairs to help other engineers and for future reference
+* Before making an on-site service call check the history of previous calls parts used and action taken
+* Check the service history of similar machines by searching using "machine_type
+* Check to see parts used on the machine type
+
+The office staff and HR staff will also have limited access to the database to carry out the following tasks
+
+* Check and keep track of service calls made by engineers
+* Monitor the use of spare parts and parts stock
+* Check for service calls not yet resolved
+
+The sales staff will also have limited access to the database to check the following
+
+* Monitor outstandiing service calls before visiting a customer
+* Monitor the reliability of each machine type for future sales
+* Check the operation
 
 
 ## Site Owner Goals
 
-The site owner is getting a web application which has copied a typical score entry system used in golf clubs and is making it available to casual golfers and golf society members.  In the club environment this service is provided by Howdiddo.com and it works so well it is in constant use. 
-Scores for each golf tournament are stored and available to the user at any time. The site owner is offering an effective professional service to the casual golfer. Golfers casual or club members are hugely interested in their statistics, the score achieved,the number of points scored each round , reducing their handicap, and so on.
-All of which means that golfers players/users(the terms are all interchangeable here) are all regularly referring to the database of their statistics and thereby looking up information from the website. 
-The service is intended to be free to use with sign up and log in required. 
-In the professional environment the user is presented with stream of advertising for all sorts of golf products and services. This provides the site owner will regular users who can be exposed to relevant advertising.
+The site owner will have invested in the web application to increase the productivity of the service department. They can view the statistics of 
+equipment problems and make judgements on the reliability of manuffacturers and equipments types. They can also get an overview of the activities of the 
+service department
+
+## Database
+As mentioned in the Project Goals section, it was required to: 
+
+>"Build a MongoDB-backed Flask project for a web application that allows Users to store and manipulate data records on a cloud-based host"  
+
+It was necessaryl also to create a scalable application, capable efficiently of handling growing numbers of Users and their input on the database. 
+
+[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) was a ideal for this purpose as it is a non-relational document-oriented database program.
+
+The database contains two collections
+
+* **Users**: contains the Username and a (Hashed) Password
+
+* **serviceReports**: containing all the data with the following fields Customer Name, Engineer Name, Date, Machine Type, Fault Deacription, Action Taken
+and Parts Used. The last field shows unresolved service calls and marks them urgent
+
+
+
+
 ## UX
 
 The home page is designed to be a relatively simple page with a Navigation bar, a hero image of the golf course and banner message with information on the event. 
@@ -124,9 +160,7 @@ iPhone Wireframe:
 ![alt text](https://github.com/marks530/Second-Milestone-Project-MS2/blob/master/wireframes/score_entry_iphone.png "iPhone score entry wireframe")
 ## Features
 
-The site is made up of three html pages supported by a css file and two javascript files. The home page has no interactive features with the exception of a link button. The score entry page gather the players name and their score and the leaderboard page stores the player name and the total score.
-The main features of the site are the interactive score card and leaderboard which allow the user view playing statistics and those of fellow competitors.
-A carousel on the home page can show a range of images of a given course. Many more images can easily be added.
+
 #### Features Left to Implement 
 
 As the project was implemented using only front-end interactive technologies there is plenty of scope for development by employing backend services. The app was setup with 9 holes and a limit of 9 players. It would be very easy to extend this. But the first task was to get the app to work and then to extend later. I will look at improving the user experience by experimenting with different layouts and use of buttons 
