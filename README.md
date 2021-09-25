@@ -38,7 +38,7 @@ The web application created for the project Python and Data Centric Developement
 ## Project Goals
 
 The goal of the project is to provide a web based application to access a database with Create, Read, Update and Delete functionality.
-I have followed Code Inititute 
+I have followed Code Inititute criteria to create the application
 
 
 * Data handling: Build a database in MongoDB using the Flask Python web application framework
@@ -52,27 +52,32 @@ I have followed Code Inititute
 * Deployment: Deploy the web application to cloud based host (Heroku)
 * Make sure to not include any passwords or secret keys in the project repository
 
+Apart from satisfing the Milestone criteria I have endevoured to create a database that could be used in a commercial environment such as 
+a service department in companies that sell and service production equipment. The design and content of the database would depend on the particular requirements
+of the individual companies but I believe the basic structure if the project database would be suitable for many of them.
+The database created will be a historical record of all the work carried out by the service engineers and all of the repairs made by them.
+As such the database will become valuable asset for the company and perhaps in time take on a value of its own
+
+
 ## User Goals
 
-The user of the site will be initially be the organizer of the event usually the captain of the golf society. The captain will set up the event and he will then instruct the competitors to log in with their names and be taken to the score entry page.
-This method of collecting scores will give the organizer a immediate update on the players scores and information on who is leading the competition. The player who is entering his score will get a total of the number of strokes and a verification that his score has been entered on the system.
-The player can also view the leaderboard and see how they have fared in the competition.
+The users of the applicatiion would be administration staff, sales staff, service engineers and the Service Manager of the department who would be the administrator of the database.
+The service engineers will be the main users of the application inputting their daily service calls with customer information and machine details.
+They will be able to search the database for all the previous service calls on each piece of the equipment and perhaps find a solution to the problem
+in the "action taken" section. 
+The admistrative staff who may be sales support or human resources can check the work of the service engineers keep an eye on the outstanding calls using the urgent flag. Information on any parts used would also be of interest. These individuals would not be able to alter any records but would have read-only access.
+The sales staff would be able to get an update on any problems a customer may having before a visit to that customer.
+The Service Manager who is the Admin user and ultimately the administator of the database will be able to monitor the operation of the service department and 
+view any outstanding service calls. The "parts used" section of the database is of special interest to check parts stock and which parts to order.
+
 ## User Stories
 
-The user/player is introduced to the site by the event organizer.
-When the user connects to the website he/she is presented with event information. The home page contains images of the course they are playing and details of the days timetable.
+The Service Manager as administrator of the application will be responsible for introducing new users to the application and creating their user accounts and passwords. Each time a new user requires access to the web app the manager creates a new account and issue the credentials to the new user.
+He is the only user with full access to the databable and have the ability to delete accounts and records.
+The service engineer will be the main user of the application. He/she will be able to
 
-When the player has finished their round they connect to the site and click in the "Score Entry" button.
-They are presented with a score card in the form of a table showing the the golf hole number, the golf hole index (which is the degree of difficulty of the each hole 1 being the most difficult) and the empty score area. The table also shows the par value for each of the golf holes which is the expected score for each hole. The par 3 holes are usually the shortest usually reachable in one shot, the 
-par 4 holes are longer and reachable in 2 shots and the par 5 holes are the longest reachable in 3 shots. 
-Above the score card the user will find the score entry area with a header showing a hole number, an increment and decrement buttons and the score entry box.
+* Create a service report each time an on-site service call is made 
 
-The score entry area is programmed the present the golf holes starting at hole 1 and ending at hole 9 (18 holes will introduced as the app evolves)and the score entry box will already contain the par value for the given hole and that will be the default score for each hole. 
-This application will reduce the onerous task of collating all the scores for all the players and the organizer. At the moment the application is limited in its scope and will be developed as the Full Stack course progress.
-The user enters their name and hits the "Click to enter Score button" and the name is entered above the score card. They then proceed to enter their score by using the increment/decrement buttons and clicking the submit button when the score is correct. So all the scores are entered with clicks of the mouse.
-
-The answer box or score box automatically picks up the par value for each hole and enters it in the score box. Each time the submit button is clicked for a hole the score is added to hole row on the score card. At hole 9 the user is presented with an alert and a congratulations message, their name and their total number of strokes or score. 
-The players name and score are added to the leaderboard on a separate page using the web storage feature of the browser. Each player can see their position on the leaderboard.
 
 ## Site Owner Goals
 
