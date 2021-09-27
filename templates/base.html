@@ -30,6 +30,7 @@
                     <li><a href="{{ url_for('add_record') }}">New Record</a></li>
                     {% if session.user|lower == "admin"|lower %}
                         <li><a href="{{ url_for('manage_users') }}">Manage Users</a></li>
+                        <li><a href="{{ url_for('manage_passwords') }}">Manage Passwords</a></li>
                     {% endif %}
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}

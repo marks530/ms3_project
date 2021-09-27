@@ -155,6 +155,11 @@ def manage_users():
     users = list(mongo.db.users.find().sort("username", 1))
     return render_template("manage_users.html", users=users)
 
+@app.route("/manage_passwords")
+def manage_passwords():
+    passwords = list(mongo.db.users.find().sort("password"))
+    return render_template("manage_passwords.html", passwords=passwords)
+
 @app.route("/add_user", methods=["GET", "POST"])
 def add_user():
     if request.method == "POST":
