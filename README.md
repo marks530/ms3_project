@@ -158,18 +158,18 @@ The leaderboard page contains a table with a column for the players names and a 
 I have in included three desktop wireframes, one for iphone and one for ipad
 Desktop Wireframes:
 
-![alt text](https://github.com/marks530/Second-Milestone-Project-MS2/blob/a16527227dd48bca4d76d307e7a5ad2675357ea6/wireframes/index_desktop_wireframe.png)
+![alt text]
+![alt text]
 
-![alt text](https://github.com/marks530/Second-Milestone-Project-MS2/blob/a16527227dd48bca4d76d307e7a5ad2675357ea6/wireframes/score_entry_desktop_wireframe.png)
-
-![alt text](https://github.com/marks530/Second-Milestone-Project-MS2/blob/a16527227dd48bca4d76d307e7a5ad2675357ea6/wireframes/leaderboard_desktop_wireframe.png)
+![alt text]
 
 iPad Wireframe:
 
-![alt text](https://github.com/marks530/Second-Milestone-Project-MS2/blob/a16527227dd48bca4d76d307e7a5ad2675357ea6/wireframes/ipad_index_desktop_wireframe.png)
+![alt text]
 
 iPhone Wireframe:
-![alt text](https://github.com/marks530/Second-Milestone-Project-MS2/blob/master/wireframes/score_entry_iphone.png "iPhone score entry wireframe")
+![alt text]
+
 ## Features
 
 **Site Structure by HTML pages**
@@ -177,18 +177,19 @@ iPhone Wireframe:
 **Base.html**:
 - This page is the base/layout html page used for Jinja Templates, which is common on all of the HTML pages. Each of the following HTML's use the base.html as their 'base' and are then appropriately adapted but maintain the links e.g. to the CSS stylesheet. The Jinja templating engine is used here, for example `{% extends "base.html" %}` followed by `{% block content %}` `{% endblock %}`. It's the general page layout, yet Users don't necessarily access this page itself, rather the other pages use it as the building block. 
 
-**Servicereports/Home page**: 
+**Servicereports/Home page**
 - As the main page the servicereports.html page shows all the service calls for all engineers in a card style layout from the Materialize components section. As a child template it inherits its structure from the base.html page.
 I decided to have the page open with all the contents of the database on display. The user can choose to collapse the display if desired.
 The search panel sits at the top of the page below the navbar and the user can enter the search criteria which are "Customer Name" and "Machine Type".
 The resultant search will then display all the elements that match. 
 
 
-**Login page**: 
+**Login page** 
 - As a child template the login page inherits its structure from the base.html page. The Login page is a straight forward card displaying a login in form. If a User has already registered and has their details are saved on the Mongo DB, they can then Log In with their Username and Password combination. If they are new to the site, they can avail of the links to the Register Page at the bottom of the form. Any errors will display a flashed error message (e.g. **'Incorrect Username and/or Password'**) and leave the user on the same page. The flashed message contains both the username and password as a possible error to deter individuals from 
 trying to get one right first. 
 
-
+**Register Page**
+- The service manager who is the administrator of the site is the only on with access the registerwhich include, a Username,(which is [Hashed](https://werkzeug.palletsprojects.com/en/1.0.x/utils/) and saved on the Database) plus a *‘Confirm Password’* input. This must match the chosen Password or a Flashed Error Message will appear. Other errors (including a choosing a Username already in existence) will prompt further Error Messages or tell them that the fields inputs are too long or too short.
 
 
 #### Features Left to Implement 
