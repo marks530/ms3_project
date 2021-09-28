@@ -114,7 +114,7 @@ It was necessary also to create a scalable application, capable efficiently of h
 
 The database contains two collections
 
-* **Users**: contains the Username and a (Hashed) Password
+* **Users**: contains the Username and a Password ([Hashed](https://werkzeug.palletsprojects.com/en/1.0.x/utils/) 
 
 * **serviceReports**: containing all the data with the following fields Customer Name, Engineer Name, Date, Machine Type, Fault Deacription, Action Taken
 and Parts Used. The last field shows unresolved service calls and marks them urgent
@@ -125,7 +125,7 @@ and Parts Used. The last field shows unresolved service calls and marks them urg
 ## UX
 
 
-The design of the web application was to create repository of information on the operation of a service department in any company. The challenge was to generate a stucture that embraced all of the important elements that needed to be recorded and would continue to provide assistance to users into the future.
+The design of the web application was to create a repository of information on the operation of a service department in any company. The challenge was to generate a stucture that embraced all of the important elements that needed to be recorded and would continue to provide assistance to users into the future.
 From my experience in the business I selected the following headers
 
 * Customer Name - in the this case the end user and buyer of equipment
@@ -136,10 +136,10 @@ From my experience in the business I selected the following headers
 * Parts Used - very important for stock control and costs
 
 
-The structure of the site is as follows
+The control and the functioning of the site is managed on the base.html page 
 
-* s the main page the servicereports.html page shows all the service calls for all engineers
-* The add_record.html page is where the engineers enters all the required iAnformation on the service call
+* As the main page the servicereports.html page shows all the service calls for all engineers
+* The add_record.html page is where the engineers enters all the required information on the service call
 * The add_user.html page 
 
 
@@ -188,8 +188,25 @@ The resultant search will then display all the elements that match.
 - As a child template the login page inherits its structure from the base.html page. The Login page is a straight forward card displaying a login in form. If a User has already registered and has their details are saved on the Mongo DB, they can then Log In with their Username and Password combination. If they are new to the site, they can avail of the links to the Register Page at the bottom of the form. Any errors will display a flashed error message (e.g. **'Incorrect Username and/or Password'**) and leave the user on the same page. The flashed message contains both the username and password as a possible error to deter individuals from 
 trying to get one right first. 
 
-**Register Page**
-- The service manager who is the administrator of the site is the only on with access the registerwhich include, a Username,(which is [Hashed](https://werkzeug.palletsprojects.com/en/1.0.x/utils/) and saved on the Database) plus a *‘Confirm Password’* input. This must match the chosen Password or a Flashed Error Message will appear. Other errors (including a choosing a Username already in existence) will prompt further Error Messages or tell them that the fields inputs are too long or too short.
+**Register New User Page**
+- The service manager who is the administrator of the site is the only user with access the Register New User (add_user.html) page. He will register a new user and give them their credintials which consist of a username and password and saved on the Database plus a *‘Confirm Password’* input. This must match the chosen Password or a Flashed Error Message will appear. Other errors (including a choosing a Username already in existence) will prompt further Error Messages or tell them that the fields inputs are too long or too short.
+
+**Profile Page**
+
+- Once the User has successfully Logged In, their chosen Username is displayed on a Jumbotron, in a *Welcome "username"* . The Navbar options have changed to give the User access to the site and its functionalities. Only users who are service engineers have the ability to modify or delete their own records. They will see edit and delete buttons in their own card records. Sales and office staff only have the option to view and search the database.
+
+**Add Record Page**
+
+- Primarily for use by the service engineer this is the location where they can create new records delete them and mark them as urgent or not.
+The first item in the list is a dropdown selector with the engineers name listed and all of the other fields which are required fields
+
+**Manage Users Page**
+
+- This is the location where the administrator can edit any user either delete the user completely or change the password associated with the user.
+If the administrator chooses to delete a user he/she will be prompted with a confirmation message to confirm or cancel the action.
+
+
+
 
 
 #### Features Left to Implement 
@@ -214,31 +231,21 @@ and the css.style file using the css checkbox on the same page
 On each page I evaluated the navbar, from Desktop to Mobile, watching the behaviour of the dropdown menu on each of the different screens. I also ensured the hamburger dropdown menu was working correctly and in position once it was visible on screen.
 
 
-  -  [Stackoverflow](https://stackoverflow.com/questions/40902230/how-to-unhash-the-password-which-is-hashed-by-generate-password-hash/40902311#40902311?newreg=ec5b09c9145b402795b3d553bd44b52e)
-
-I had considered adding an extra page to look up the passwords in case somebody had forgotten theirs, but was unable to find a way to do and after some searching I found this article and it makes sense. It explains why when you forget your password for a particular site they always get you to create a new one.
-
-From Wikipedia:
-
-[MD5] is a mathematical algorithm that maps data of arbitrary size to a bit string of a fixed size (a hash function) which is designed to also be a one-way function, that is, a function which is infeasible to invert.
-
-Leaving aside potential vulnerabilities, there's no way to get the original data that produced the hash. And that's the idea. If some bad guy get access to your database, he won't be able to know your users' passwords.
-
-
-
-
 Javascript code was checked on 
   -  [jshint](https://jshint.com/)
  
 
 ## Bugs
 
-I had some issues with the bootstrap link and did not have enough time to resolve all of them
-This link was causing problems in the footer section not working to display the logos for the social media links. Using a link with version 4.7.0 fixed the problems on one of the pages. I intend to investigate this issue when more time is available.
-There is still a problem with the iphone screen size with the with the buttons overlapping somewhat.
-Unfortunately I will not have time to resolve this issue before the deployment. 
-However I do intend to get to the bottom of the matter
-Another issue is the logos for the social media links are not showing on the leaderboard and the score entry page. I will also coorect this with more time
+While not exactly a bug I had considered adding an extra page to look up the passwords in case somebody had forgotten theirs, but was unable to find a way to do that and after some searching I found this article and it provided a solution. The Manage Passwords page which I had created was based on the Manage Users page showing the username and their password which I had retrieved from the database. The problem was that the hashed password was retrieved from the database. The key point being that a hashed function is a one way function that cannot work in reverse. It explains why when you forget your password for a particular site they always get you to create a new one.
+
+-  [Stackoverflow](https://stackoverflow.com/questions/40902230/how-to-unhash-the-password-which-is-hashed-by-generate-password-hash/40902311#40902311?newreg=ec5b09c9145b402795b3d553bd44b52e)
+From Wikipedia:
+[MD5] is a mathematical algorithm that maps data of arbitrary size to a bit string of a fixed size (a hash function) which is designed to also be a one-way function, that is, a function which is infeasible to invert.
+
+Leaving aside potential vulnerabilities, there's no way to get the original data that produced the hash. And that's the idea. If some bad guy get access to your database, he won't be able to know your users' passwords.
+
+
 
 [StackOverflow](https://stackoverflow.com/questions/48919200/github-pages-only-showing-readme-file) whilst trying to deploy I could only see my ReadMe on Github Pages
 
@@ -254,7 +261,7 @@ add links here to deployed site
 **CLI commands** 
 
 ```
-git add 
+git add -A
 git commit -m 
 git push 
 git status
@@ -273,8 +280,8 @@ git status
 
 
 
-The structure of the Mini-Project  proved to be ideal for the database application I needed for the site so the site is based largely on it. So credit to Tim Nelson for that
-The score card and leaderboard are based on the tables found in the Jquery section of the course 
+The Data Centric Design Mini-Project forms the basis for the project so the site and application are based largely on it. So credit to Tim Nelson for that
+
 ## Content
 
 
