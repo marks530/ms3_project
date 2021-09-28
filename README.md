@@ -71,6 +71,7 @@ The sales staff would be able to get an update on any problems a customer may ha
 The Service Manager who is the Admin user and ultimately the administator of the database will be able to monitor the operation of the service department and 
 view any outstanding service calls. The "parts used" section of the database is of special interest to check parts stock and which parts to order.
 
+
 ## User Stories
 
 The Service Manager as administrator of the application will be responsible for introducing new users to the application and creating their user accounts and passwords. Each time a new user requires access to the web app the manager creates a new account and issue the credentials to the new user.
@@ -140,8 +141,21 @@ The control and the functioning of the site is managed on the base.html page
 
 * As the main page the servicereports.html page shows all the service calls for all engineers
 * The add_record.html page is where the engineers enters all the required information on the service call
-* The add_user.html page 
+* The add_user.html page where only the administator can add a new user
+* The edit_record.html page only the engineer who created the record can edit it
+* The profile.html shows who is logged in at any given time
+* The login.html page allows registered users to login 
+* The register.html page allows only the admin
 
+
+The goal of this milestone project was to create a web application using **Python**, the **Flask** libraries (a Python web framework) and a (NoSQL) non-relational document based Database (**Mongo DB**) to construct the functioning app, as well as incorporate the *CRUD* operations (Create, Read, Update and Delete). 
+
+**CRUD** refers to [persistence storage](https://en.wikipedia.org/wiki/Persistence_(computer_science)) 
+
+**(1) Create** - add new, unique data to the database.
+**(2) Read** - Fetch data from the database.
+**(3) Update** - change and edit pre-existing database data.
+**(4) Delete** - completely remove data from database
 
 ## Design Choice     
 
