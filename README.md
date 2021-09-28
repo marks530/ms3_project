@@ -207,20 +207,16 @@ If the administrator chooses to delete a user he/she will be prompted with a con
 
 
 
-
-
-#### Features Left to Implement 
-
-As the project was implemented using only front-end interactive technologies there is plenty of scope for development by employing backend services. The app was setup with 9 holes and a limit of 9 players. It would be very easy to extend this. But the first task was to get the app to work and then to extend later. I will look at improving the user experience by experimenting with different layouts and use of buttons 
-
-In order to keep the user coming back to the site records of each event and associated statistics could be made available. The user could look up every time a round of golf was played and the individual scores at the time. Using the historical data a host of other useful statistics can be calculated. The user can measure their performance over time. As with similar sites relevant advertisements can be displayed to the user and an e-commerce utility could be added to the site.Using the landing page with its carousel and banner image it is possible to show multiple images of a given course and it would be a feature that could be extended over time. Templates could be set up for any number of different courses
-
 ## Technologies Used
 
  -   [HTML5](https://www.w3schools.com/html/)
  -   [CSS](https://www.w3schools.com/css/default.asp)
  -   [Javascript](https://www.javascript.com/)
- 
+ -   [Python]
+ -   [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+ -   [MongoDB](https://www.mongodb.com/)
+ -   [Heroku](Heroku: Cloud Application Platform https://www.heroku.com)
+
 
 
 ## Testing
