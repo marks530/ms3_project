@@ -94,7 +94,7 @@ The sales staff will also have limited access to the database to check the follo
 
 * Monitor outstandiing service calls before visiting a customer
 * Monitor the reliability of each machine type for future sales
-* Check the operation
+* Check the operation and performance of the service department
 
 
 ## Site Owner Goals
@@ -124,13 +124,23 @@ and Parts Used. The last field shows unresolved service calls and marks them urg
 
 ## UX
 
-The home page is designed to be a relatively simple page with a Navigation bar, a hero image of the golf course and banner message with information on the event. 
-This is followed by a carousel allowing the site to show the user multiple images of the golf course. The footer will contain useful contact information.
-This page serves as an introduction to the event as all the users will already be familiar with.
-The most important element on the page is the "Score Entry" button which is a link that takes the user to the score entry page.
-The layout of the page is based on the score entry system used by HowdidIdo.com used by golf clubs and the Maths game used in the Code Institute course on Javascript demonstrated by Matt Rudge.
-This combination seemed to fit perfectly the requirements for the purpose.
-The increment/decrement buttons around the par value and the hole count keeping track of the hole number
+The design of the web application was to create repository of information on the operation of a service department in any company. The structure of the site is as follows
+
+The design of the web application was to create repository of information on the operation of a service department in any company. The challenge was to generate a stucture that embraced all of the important elements that needed to be recorded and would continue to provide assistance to users into the future.
+From my experience in the business I selected the following headers
+
+* Customer Name - in the this case the end user and buyer of equipment
+* Engineer Name - as the main user and gaining the greatest benefit
+* Machine Type - Machine Type or equipment type, a single customer may have many differect types
+* Fault Description - allows the engineer to enter details of the problem
+
+
+The structure of the site is as follows
+
+* As the main page the servicereports page shows all the service calls for all engineers
+* The add_record all
+
+
 ## Design Choice     
 
 The site layout contains a navigation bar, a banner image, a welcome message and event details section, a carousel with multiple images of the golf course, an information section and a footer.
@@ -177,10 +187,25 @@ In order to keep the user coming back to the site records of each event and asso
 
 ## Testing
 
-Completed testing of all the html code at the following address [W3 Validator](https://validator.w3.org/nu/#textarea and the css.style file using the css checkbox on the same page 
+Completed testing of all the html code at the following address 
+ -   [W3 Validator](https://validator.w3.org/nu/#textarea) 
+and the css.style file using the css checkbox on the same page 
 On each page I evaluated the navbar, from Desktop to Mobile, watching the behaviour of the dropdown menu on each of the different screens. I also ensured the hamburger dropdown menu was working correctly and in position once it was visible on screen.
-The hamburger element proved to be troublesome this time around as it did not work on all the pages only the landing page. I discover this was because I had used different versions of the Bootstrap CDN on each page
-During testing I discovered that on the iPad in Chrome Dev Tools the score entry section is jumbled yet it works on an iPad Pro. I was able to correct this by modifying the css rules
+
+
+  -  [Stackoverflow](https://stackoverflow.com/questions/40902230/how-to-unhash-the-password-which-is-hashed-by-generate-password-hash/40902311#40902311?newreg=ec5b09c9145b402795b3d553bd44b52e)
+
+I had considered adding an extra page to look up the passwords in case somebody had forgotten theirs, but was unable to find a way to do and after some searching I found this article and it makes sense. It explains why when you forget your password for a particular site they always get you to create a new one.
+
+From Wikipedia:
+
+[MD5] is a mathematical algorithm that maps data of arbitrary size to a bit string of a fixed size (a hash function) which is designed to also be a one-way function, that is, a function which is infeasible to invert.
+
+Leaving aside potential vulnerabilities, there's no way to get the original data that produced the hash. And that's the idea. If some bad guy get access to your database, he won't be able to know your users' passwords.
+
+
+
+
 Javascript code was checked on 
   -  [jshint](https://jshint.com/)
  
@@ -227,12 +252,11 @@ git status
 
 
 
-The structure of the Maths game proved to be ideal for the score entry system I needed for the site so this area  is based on that game. So credit to Matt Rudge for that
+The structure of the Mini-Project  proved to be ideal for the database application I needed for the site so the site is based largely on it. So credit to Tim Nelson for that
 The score card and leaderboard are based on the tables found in the Jquery section of the course 
 ## Content
 
-The image used in the site are almost all my own with the exception of one image taken from 
- - [golf images](https://unsplash.com/s/photos/golf)
+
 
 **Code Snippet Example - continue**
 
