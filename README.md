@@ -100,7 +100,7 @@ The sales staff will also have limited access to the database to check the follo
 ## Site Owner Goals
 
 The site owner will have invested in the web application to increase the productivity of the service department. They can view the statistics of 
-equipment problems and make judgements on the reliability of manuffacturers and equipments types. They can also get an overview of the activities of the 
+equipment problems and make judgements on the reliability of manufacturers and equipments types. They can also get an overview of the activities of the 
 service department
 
 ## Database
@@ -108,7 +108,7 @@ As mentioned in the Project Goals section, it was required to:
 
 >"Build a MongoDB-backed Flask project for a web application that allows Users to store and manipulate data records on a cloud-based host"  
 
-It was necessaryl also to create a scalable application, capable efficiently of handling growing numbers of Users and their input on the database. 
+It was necessary also to create a scalable application, capable efficiently of handling growing numbers of Users and their input on the database. 
 
 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) was a ideal for this purpose as it is a non-relational document-oriented database program.
 
@@ -124,7 +124,6 @@ and Parts Used. The last field shows unresolved service calls and marks them urg
 
 ## UX
 
-The design of the web application was to create repository of information on the operation of a service department in any company. The structure of the site is as follows
 
 The design of the web application was to create repository of information on the operation of a service department in any company. The challenge was to generate a stucture that embraced all of the important elements that needed to be recorded and would continue to provide assistance to users into the future.
 From my experience in the business I selected the following headers
@@ -133,12 +132,15 @@ From my experience in the business I selected the following headers
 * Engineer Name - as the main user and gaining the greatest benefit
 * Machine Type - Machine Type or equipment type, a single customer may have many differect types
 * Fault Description - allows the engineer to enter details of the problem
+* Action Taken - space to allow the service engineer give detailed information on actions taken to solve the problem
+* Parts Used - very important for stock control and costs
 
 
 The structure of the site is as follows
 
-* As the main page the servicereports page shows all the service calls for all engineers
-* The add_record all
+* s the main page the servicereports.html page shows all the service calls for all engineers
+* The add_record.html page is where the engineers enters all the required iAnformation on the service call
+* The add_user.html page 
 
 
 ## Design Choice     
@@ -169,6 +171,24 @@ iPad Wireframe:
 iPhone Wireframe:
 ![alt text](https://github.com/marks530/Second-Milestone-Project-MS2/blob/master/wireframes/score_entry_iphone.png "iPhone score entry wireframe")
 ## Features
+
+**Site Structure by HTML pages**
+
+**Base.html**:
+- This page is the base/layout html page used for Jinja Templates, which is common on all of the HTML pages. Each of the following HTML's use the base.html as their 'base' and are then appropriately adapted but maintain the links e.g. to the CSS stylesheet. The Jinja templating engine is used here, for example `{% extends "base.html" %}` followed by `{% block content %}` `{% endblock %}`. It's the general page layout, yet Users don't necessarily access this page itself, rather the other pages use it as the building block. 
+
+**Servicereports/Home page**: 
+- As the main page the servicereports.html page shows all the service calls for all engineers in a card style layout from the Materialize components section. As a child template it inherits its structure from the base.html page.
+I decided to have the page open with all the contents of the database on display. The user can choose to collapse the display if desired.
+The search panel sits at the top of the page below the navbar and the user can enter the search criteria which are "Customer Name" and "Machine Type".
+The resultant search will then display all the elements that match. 
+
+
+**Login page**: 
+- As a child template the login page inherits its structure from the base.html page. The Login page is a straight forward card displaying a login in form. If a User has already registered and has their details are saved on the Mongo DB, they can then Log In with their Username and Password combination. If they are new to the site, they can avail of the links to the Register Page at the bottom of the form. Any errors will display a flashed error message (e.g. **'Incorrect Username and/or Password'**) and leave the user on the same page. The flashed message contains both the username and password as a possible error to deter individuals from 
+trying to get one right first. 
+
+
 
 
 #### Features Left to Implement 
@@ -296,7 +316,8 @@ Nevertheless I found the whole project both fascinating and in the end had a rea
 
 
 ###Errors
-Inevitably some tying errors will occur and trying to identify them can be difficult and time comsuming. However,
+
+Inevitably some typing errors will occur and trying to identify them can be difficult and time comsuming. However,
 using the Traceback in the Jinja Error page proved to be very useful in tracing the exact location of the
 syntax error
 Example:
