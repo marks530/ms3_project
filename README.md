@@ -63,7 +63,7 @@ As such the database will become valuable asset for the company and perhaps in t
 ## User Goals
 
 The users of the applicatiion would be administration staff, sales staff, service engineers and the Service Manager of the department who would be the administrator of the database.
-The service engineers will be the main users of the application inputting their daily service calls with customer information and machine details.
+The service engineers will be the main users of the application who want to create a report of their daily service calls with customer information and machine details.
 They will be able to search the database for all the previous service calls on each piece of the equipment and perhaps find a solution to the problem
 in the "action taken" section. 
 The admistrative staff who may be sales support or human resources can check the work of the service engineers keep an eye on the outstanding calls using the urgent flag. Information on any parts used would also be of interest. These individuals would not be able to alter any records but would have read-only access.
@@ -109,17 +109,16 @@ As mentioned in the Project Goals section, it was required to:
 
 >"Build a MongoDB-backed Flask project for a web application that allows Users to store and manipulate data records on a cloud-based host"  
 
-It was necessary also to create a scalable application, capable efficiently of handling growing numbers of Users and their input on the database. 
+The database can be customised for each company that uses it with controlled acces for different groups
 
 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) was a ideal for this purpose as it is a non-relational document-oriented database program.
 
-The database contains two collections
+This database contains two collections
 
 * **Users**: contains the Username and a Password ([Hashed](https://werkzeug.palletsprojects.com/en/1.0.x/utils/) 
 
 * **serviceReports**: containing all the data with the following fields Customer Name, Engineer Name, Date, Machine Type, Fault Deacription, Action Taken
 and Parts Used. The last field shows unresolved service calls and marks them urgent
-
 
 
 
@@ -142,10 +141,10 @@ The control and the functioning of the site is managed on the base.html page
 * As the main page the servicereports.html page shows all the service calls for all engineers
 * The add_record.html page is where the engineers enters all the required information on the service call
 * The add_user.html page where only the administator can add a new user
-* The edit_record.html page only the engineer who created the record can edit it
+* The edit_record.html page - only the engineer who created the record can edit it
 * The profile.html shows who is logged in at any given time
 * The login.html page allows registered users to login 
-* The register.html page allows only the admin
+* The register.html page allows only the administroator to create new users and delete old users
 
 
 The goal of this milestone project was to create a web application using **Python**, the **Flask** libraries (a Python web framework) and a (NoSQL) non-relational document based Database (**Mongo DB**) to construct the functioning app, as well as incorporate the *CRUD* operations (Create, Read, Update and Delete). 
