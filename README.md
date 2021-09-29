@@ -17,19 +17,18 @@ Here is the deployed version on the site :
 - [**User Goals**](#user-goals)
 - [**User Stories**](#user-stories)
 - [**Site Owner Goals**](#site-owner-goals)
-- [**Database**]
+- [**Database**](#db)
 - [**UX**](#ux)
 - [**Design Choices**](#design-choices)
 - [**Wireframes**](#wireframes)
-- [**Features**](#features)
-	- [Features left to implement](#features-left-to-implement)       
+- [**Features**](#features)     
 - [**Technologies Used**](#technologies-used)
 - [**Testing**](#testing)	
 - [**Bugs**](#bugs)
 - [**Deployment**](#deployment)
 - [**Credits**](#credits)
-	- [Content](#content)
-	- [Acknowledgements](#acknowledgements)
+- [Content](#content)
+- [Acknowledgements](#acknowledgements)
 - [**Footnote**](#footnote)    
 ## Project Introduction
 The web application created for the project Python and Data Centric Developement Milestone 3 is designed for engineering companies who have a sales and service team. From my previous experience working as a service engineer I realise the value of having a record of every service call and the actions taken to resolve each problem. A database that recorded the service history each piece of equipment with the customer infomation would be a huge asset to these companies
@@ -192,7 +191,7 @@ iPhone Wireframe:
 
 **Servicereports/Home page**
 - As the main page the servicereports.html page shows all the service calls for all engineers in a card style layout from the Materialize components section. As a child template it inherits its structure from the base.html page.
-I decided to have the page open with all the contents of the database on display. The user can choose to collapse the display if desired.
+The page opens with all the contents of the database collasped. The user can choose to open the display if desired by clicking in the panel.
 The search panel sits at the top of the page below the navbar and the user can enter the search criteria which are "Customer Name" and "Machine Type".
 The resultant search will then display all the elements that match. 
 
@@ -235,11 +234,16 @@ If the administrator chooses to delete a user he/she will be prompted with a con
 ## Testing
 
  I have divided the testing of the application in to two sections
- The first consists of checking the operation of all of the options available to the user and verifying that they are behaving as intended and the second section is checking the for errors and good coding practices and of course validation.
+ The first consists of checking the operation of all of the options available to the user and verifying that they are behaving as intended and the second section is checking the code for errors and good coding practices and of course validation.
 
  ### Testing of the User Options
+The following checks were carried out:
+* Register a new user with username password and employee type and verify the exact same values were prenent in the database
+* After registration the user is taken back to the login page
+* Login as the administrator and check on the profile page to see who is logged in
+* Login as the administrator and check the navbar for links to all the html pages on the site
+* 
 
- 
 Completed testing of all the html code at the following address 
  -   [W3 Validator](https://validator.w3.org/nu/#textarea) 
 and the css.style file using the css checkbox on the same page 
