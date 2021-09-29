@@ -242,7 +242,12 @@ The following checks were carried out:
 * After registration the user is taken back to the login page
 * Login as the administrator and check on the profile page to see who is logged in
 * Login as the administrator and check the navbar for links to all the html pages on the site
-* 
+* Login as the a standard user and check the navbar for links to the html pages on the site
+* Login as the administrator and check the navbar for links to all the html pages on the site
+* Login as the administrator and check the navbar for links to all the html pages on the site
+* Login as the administrator and check the navbar for links to all the html pages on the site
+* Login as the administrator and check the navbar for links to all the html pages on the site
+* Login as the administrator and check the navbar for links to all the html pages on the site
 
 Completed testing of all the html code at the following address 
  -   [W3 Validator](https://validator.w3.org/nu/#textarea) 
