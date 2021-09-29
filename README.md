@@ -234,6 +234,12 @@ If the administrator chooses to delete a user he/she will be prompted with a con
 
 ## Testing
 
+ I have divided the testing of the application in to two sections
+ The first consists of checking the operation of all of the options available to the user and verifying that they are behaving as intended and the second section is checking the for errors and good coding practices and of course validation.
+
+ ### Testing of the User Options
+
+ 
 Completed testing of all the html code at the following address 
  -   [W3 Validator](https://validator.w3.org/nu/#textarea) 
 and the css.style file using the css checkbox on the same page 
