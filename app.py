@@ -43,14 +43,16 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "employee_type": request.form.get("employee_type")
         }
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
+        # session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        # return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("login"))
 
     return render_template("register.html")
 
@@ -105,7 +107,7 @@ def logout():
 def add_record():
     if request.method == "POST":
         is_resolved = "Yes" if request.form.get("is_resolved") else "No"
-        record = {
+        report = {
             "engineer_name": request.form.get("username"),
             "customer_name": request.form.get("customer_name"),
             "date_received": request.form.get("date_received"),
@@ -116,7 +118,7 @@ def add_record():
             "is_resolved": request.form.get("is_resolved")
 
         }
-        mongo.db.serviceReports.insert_one(record)
+        mongo.db.serviceReports.insert_one(report)
         flash("Record Successfully Added")
         return redirect(url_for("get_serviceReports"))
     usernames = mongo.db.users.find().sort("username", 1)
@@ -165,7 +167,8 @@ def add_user():
     if request.method == "POST":
         user = {
             "username": request.form.get("username"),
-            "password": generate_password_hash(request.form.get ("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "employee_type": request.form.get("employee_type")
         }
         mongo.db.users.insert_one(user)
         flash("New User Added")
@@ -179,7 +182,8 @@ def edit_user(user_id):
     if request.method == "POST":
         submit = {
             "username": request.form.get("username"),
-            "password": generate_password_hash(request.form.get ("password"))
+            "password": generate_password_hash(request.form.get ("password")),
+            "employee_type": request.form.get("employee_type")
         }
         mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
         flash("User Successfully Updated")

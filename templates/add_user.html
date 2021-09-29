@@ -9,7 +9,7 @@
         <!-- add user  -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">build</i>
+                <i class="material-icons prefix">person_add</i>
                 <input id="username" name="username" minlength="3" maxlength="25" 
                 type="text" class="validate" required>
                 <label for="username">New User</label>
@@ -19,11 +19,25 @@
         <!-- add password -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">build</i>
+                <i class="material-icons prefix">input</i>
                 <input id="password" name="password" minlength="3" maxlength="25" 
                 type="text" class="validate" required>
                 <label for="password">Password</label>
             </div>
+        </div>
+
+        <!-- add employee type -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">person_outline</i>
+                <select id="employee_type" name="employee_type" required>
+                  <option value="" disabled selected></option>
+                  <option value="engineer">Engineer</option>
+                  <option value="sales">Sales</option>
+                  <option value="office">Office</option>
+                </select>
+                <label for="employee_type">Employee Type</label>
+              </div>
         </div>
        
         <!-- submit and cancel buttons -->

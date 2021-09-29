@@ -6,7 +6,7 @@
 
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('edit_user', user_id=user._id) }}">
-        <!-- add user  -->
+        <!-- edit user  -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">build</i>
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <!-- add password -->
+        <!-- edit password -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">build</i>
@@ -25,7 +25,21 @@
                 <label for="password">Password</label>
             </div>
         </div>
-       
+
+        <!-- add employee type -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">person_outline</i>
+                <select id="employee_type" name="employee_type" required>
+                  <option value="" disabled selected></option>
+                  <option value="engineer">Engineer</option>
+                  <option value="sales">Sales</option>
+                  <option value="office">Office</option>
+                </select>
+                <label for="employee_type">Employee Type</label>
+              </div>
+        </div>
+
         <!-- submit and cancel buttons -->
         <div class="row">
             <div class="col s12 center-align">

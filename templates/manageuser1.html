@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="light-blue-text text-darken-4 center-align">Manage New and Old Users</h3>
+
+<div class="row">
+    <div class="col s12 center-align">
+
+        <a href="{{ url_for('add_user') }}" class=btn large light-blue darken-2 text-shadow>
+            Add User <i class="material-icons left">add_box</i>
+        </a>
+    </div>
+
+</div>
+<!-- employee type -->
+<div class="row">
+        <label for="employee_type">Employee Type:</label>
+        <select name="employee_type" id="employee_type" class="validate" required>
+            <option value=""></option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+        </select>
+</div>
+
+
+<!-- employee new type -->
+<div class="row">
+    <label for="employee_type">Employee Type:</label>
+    <select name="employee_type" id="employee_type" class="validate" required>
+        <option value=""></option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+    </select>
+</div>
+
+<div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Employee Type</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label>Employee</label>
+  </div>
+
+    <div class="row">
+        {% for user in users %}
+        <div class="col s12 m3">
+            <div class="card blue darken-1 text-shadow center-align">
+                <div class="card-content white-text">
+                <span class="card-title">{{ user.username }}</span>
+                </div>
+                <div class="card-action">
+                <a href="{{ url_for('edit_user', user_id=user._id) }}" class="btn green accent-4">Edit</a>
+                </div>
+                <div class="card-action">
+                    <a href="#" onclick="toggleModal();">Remove User</a>
+                </div>
+                    <section class="infomodal">
+                        
+                        <div id="modal3" class="modal">
+                            <div class="modal-content">
+                                <h4 id="info-modal-heading">Link Disabled</h4>
+                                <p id="info-modal-heading">Sorry</p>
+                            </div>
+                            <div>
+                                <a href="#" class="modal-close waves-effect btn-flat">Close Please!</a>
+                            </div>
+                        </div>
+                    </section>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
