@@ -233,8 +233,8 @@ If the administrator chooses to delete a user he/she will be prompted with a con
 
 ## Testing
 
- I have divided the testing of the application in to two sections
- The first consists of checking the operation of all of the options available to the user and verifying that they are behaving as intended and the second section is checking the code for errors and good coding practices and of course validation.
+ I have divided the testing of the application in to three sections
+ The first consists of checking the operation of all of the options available to the user and verifying that they are behaving as intended and the second section is checking the code for errors and good coding practices and of course validation. The third section is testing the application in different browsers and different screen sizes and finally on Windows machines and Macs.
 
  ### Testing of the User Options
 The following checks were carried out:
@@ -307,17 +307,7 @@ The Data Centric Design Mini-Project forms the basis for the project so the site
 
 **Code Snippet Example - continue**
 
-```javascript
-
-function saveScores() {
-    let scores = localStorage.getItem(LOCAL_STORAGE_GAME_SCORES);
-    if (!scores)
-        scores = JSON.stringify({}); //JSON.stringify convert Javascript objet to a JSON object
-    let scoresObject = JSON.parse(scores); //JSON.parse convert JSON objet to a Javascript object
-    let name = document.getElementById('name').value;
-    scoresObject[name] = getArrayTotal();
-    localStorage.setItem(LOCAL_STORAGE_GAME_SCORES, JSON.stringify(scoresObject))
-}
+```
 
 ```
 
