@@ -55,8 +55,8 @@ def register():
             return redirect(url_for("login")) 
 
         else:
-            flash("Registration unSuccessful!")
-        # return user to register page after unsuccessful registration
+            flash("Passwords do not match Registration Unsuccessful!")
+            # return user to register page after unsuccessful registration
     return render_template("register.html")
 
 

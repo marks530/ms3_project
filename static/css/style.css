@@ -22,3 +22,10 @@ body {
   main {
     flex: 1 0 auto;
   }
+
+  textarea {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
