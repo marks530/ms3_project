@@ -158,13 +158,12 @@ The goal of this milestone project was to create a web application using **Pytho
 
 ## Design Choice     
 
-The site layout contains a navigation bar, a banner image, a welcome message and event details section, a carousel with multiple images of the golf course, an information section and a footer.
-This is a simple layout which can be developed to suit many different courses throughout the country and indeed abroad
-In the center of the page is the "Score Entry" button which is the call to action for the page. This takes the user to the score entry page 
+The design and layout of the site is a plain and simple approach. The information is presented in a card format taken from the Materialize website and the Mini Project on the CI course.
+The records are displayed in large style card that is easy to read and the user can scroll to browse all the entries. This area is also collaspable.
+The manage users page with its list of users and their employee type is also presented in a card format.
 
-This page contains the business area of the site. The layout directs the user to log in and enter their score via the score entry area to appear in the score card table. The structure and layout of the score entry area is based on the Maths game used in the JavaScript course. The increment and decrement were a perfect fit for the score entry structure. The JavaScript content takes some elements from the game but is largely modified. Extra functions to get the players name, fetch the par values and present them in the score entry box, log the scores in the score card, total the numbers of strokes and add the total score to the score card 
-The leaderboard page contains a table with a column for the players names and a column for the total scores for each individual. The structure is based on the local storage property that allows access to a storage object saved across browser sessions. This accessed by functions created in both the JavaScript files on the site. The site is configured for a maximum of 9 players but can easily be extended
 
+I have removed the link from the bottom of the login page to the register page to restrict access to the that page to the administrator or service manager
  
 ## Wireframes
 
@@ -257,6 +256,8 @@ The following checks were carried out:
 * Login as the administrator and check the navbar for links to all the html pages on the site
 * Verify that the manage users page shows lists all the users and their role correctly
 * Check the operation of the base.html and that it is showing the correct links for each user
+* Test link at bottom of register new user page to return user to login page
+* Test link at bottom of login page to return user to register page
 
 
 
