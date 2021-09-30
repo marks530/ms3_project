@@ -124,8 +124,9 @@ and Parts Used. The last field shows unresolved service calls and marks them urg
 ## UX
 
 
-The design of the web application was to create a repository of information on the operation of a service department in any company. The challenge was to generate a stucture that embraced all of the important elements that needed to be recorded and would continue to provide assistance to users into the future.
-From my experience in the business I selected the following headers
+The design of the web application was to create a repository of information on the operation of a service department in any company. As the application was created and developed to be used by a company and its employees and not open to the general public it is not envisaged that there will be huge numbers of users. That said the fact that the application is for a commercial enterprise it would certainly be in use every day and that while the number of users would be relatively low, the  number of entries will grow steadly. Off-site access is also required. The MongoDB database seemed like a good solution with its features like End-to-End Encryption, Sync Data Seamlessly, Global Data Distribution, Real-Time Alerts.
+For the database itself, the challenge was to generate a stucture that embraced all of the important elements that needed to be recorded in the business and would continue to provide assistance to users into the future.
+From my experience in this type of business I selected the following headers
 
 * Customer Name - in the this case the end user and buyer of equipment
 * Engineer Name - as the main user and gaining the greatest benefit
@@ -133,7 +134,7 @@ From my experience in the business I selected the following headers
 * Fault Description - allows the engineer to enter details of the problem
 * Action Taken - space to allow the service engineer give detailed information on actions taken to solve the problem
 * Parts Used - very important for stock control and costs
-
+* Urgent or not
 
 The control and the functioning of the site is managed on the base.html page 
 
@@ -254,6 +255,7 @@ The following checks were carried out:
 * Check the profile page responds with the correct logged in user and flashed message
 * Login as the administrator and check the navbar for links to all the html pages on the site
 * Verify that the manage users page shows lists all the users and their role correctly
+* Check the operation of the base.html and that it is showing the correct links for each user
 
 
 
