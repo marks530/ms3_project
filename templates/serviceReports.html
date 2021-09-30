@@ -52,8 +52,8 @@
                     <option hidden> value="{{ serviceReport.action_taken }}" selected>"{{ serviceReport.action_taken }}"</option>
                     <span class="card-title">Parts Used:  {{ serviceReport.parts_used}}</span>
                     <option hidden> value="{{ serviceReport.parts_used }}" selected>"{{ serviceReport.parts_used }}"</option>
-                    <span class="card-title">Is Resolved:  {{ serviceReport.is_resolved}}
-                    {% if serviceReport.is_resolved == "No" %}
+                    <span class="card-title">Is Urgent:  {{ serviceReport.is_resolved}}
+                    {% if serviceReport.is_resolved == "on" %}
                     <i class="material-icons btn tooltipped" data-position="right" data-tooltip="URGENT!">warning</i>
                     {% endif %}
                     </span>     
@@ -61,7 +61,7 @@
                     {% if session.user|lower == serviceReport.engineer_name|lower %}
                     <div class="card-action">
                       <a href="{{ url_for('delete_record', serviceReport_id=serviceReport._id) }}" 
-                      class="btn-small red accent-4" onclick=" return confirm('Are you sure you want to delete the Record?')">Delete</a>
+                      class="btn-small red accent-4" onclick="return confirm('Are you sure you want to delete the Record?')">Delete</a>
                       <a href="{{ url_for('edit_record', serviceReport_id=serviceReport._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                     </div>
                     {% endif %}  
