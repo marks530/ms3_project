@@ -243,9 +243,10 @@ The following checks were carried out:
 * Login as the administrator and check on the profile page to see who is logged in
 * Login as the administrator and check the navbar for links to all the html pages on the site
 * Login as the a standard user and check the navbar for links to the html pages on the site
-* Login as an engineer and check the navbar for links to the html pages on the site
-* Login as the administrator and check the navbar for links to all the html pages on the site
-* Login as the administrator and check the navbar for links to all the html pages on the site
+* Login as an engineer and check the navbar for correct links to the html pages on the site
+* Test the login page for existing user and check that correct flash messages are received
+* Test the login page for unknown user and check that correct flash messages are received
+* Create a new report 
 * Login as the administrator and check the navbar for links to all the html pages on the site
 * Login as the administrator and check the navbar for links to all the html pages on the site
 
