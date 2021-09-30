@@ -238,6 +238,7 @@ If the administrator chooses to delete a user he/she will be prompted with a con
 
  ### Testing of the User Options
 The following checks were carried out:
+
 * Register a new user with username password and employee type and verify the exact same values were prenent in the database
 * After registration the user is taken back to the login page
 * Login as the administrator and check on the profile page to see who is logged in
@@ -246,9 +247,17 @@ The following checks were carried out:
 * Login as an engineer and check the navbar for correct links to the html pages on the site
 * Test the login page for existing user and check that correct flash messages are received
 * Test the login page for unknown user and check that correct flash messages are received
-* Create a new report 
+* Check the login page for min and max lengths and patterns on all fields
+* Create a new report and check for validation of min and max length on all fields
+* Verify in the add report page that empty fields are not permitted
+* Verify that new report is reflected in the correct collection in the database
+* Check the profile page responds with the correct logged in user and flashed message
 * Login as the administrator and check the navbar for links to all the html pages on the site
-* Login as the administrator and check the navbar for links to all the html pages on the site
+* Verify that the manage users page shows lists all the users and their role correctly
+
+
+
+As Flask is a framework, there is a requirement to validate the HTML code using the URL to avoid false error flags due to jinja2. 
 
 Completed testing of all the html code at the following address 
  -   [W3 Validator](https://validator.w3.org/nu/#textarea) 
