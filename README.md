@@ -329,7 +329,7 @@ The Data Centric Design Mini-Project forms the basis for the project so the site
 ```
 
 ```
-
+## Acknowledgements
 
 ## Footnote
 
