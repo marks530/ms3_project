@@ -22,3 +22,7 @@ body {
 .profile {
     margin-top: 40px;
 }
+
+main {
+    flex: 1 0 auto;
+}
