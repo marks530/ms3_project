@@ -295,7 +295,11 @@ validate" class="validate" required'''
 From line 46, column 5; to line 46, column 13
 der>↩↩    <section>↩     '''
 
+Foound that this piece of css code keeps the footer at the base of each page
 
+'''main {
+    flex: 1 0 auto;
+}'''
 
 
 ## Errors
