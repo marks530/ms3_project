@@ -7,8 +7,8 @@
 <h2 style="text-align:center">Create a Service Department Database :robot: :engineer: </h2>
 
 
-Here is the deployed version on the site : 
-**[Service Database](https://github.com/marks530/ms3_project)**
+Here is the deployed version on the site:
+**[Service Database](http://ms3-project-heroku.herokuapp.com)**
 
 # **Table of Contents**
 
