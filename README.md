@@ -318,9 +318,9 @@ git status
 
 [**The Deployed Heroku site can be found here**](http://ms3-project-heroku.herokuapp.com/) 
 
-*For the **Code Institute testing purposes**, I suggest (at some stage) logging into the site as the **Admin**, using the following details*: 
+***Code Institute testing purposes*** 
 - Username: **admin**   
-- Password: **admin99** 
+- Password: **IPS123** 
 
 ## Credits 
 
