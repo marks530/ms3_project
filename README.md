@@ -162,6 +162,11 @@ The design and layout of the site is a plain and simple approach. The informatio
 The records are displayed in large style card that is easy to read and the user can scroll to browse all the entries. This area is also collaspable.
 The manage users page with its list of users and their employee type is also presented in a card format.
 
+On the manage users page and the register new user page there is duplication of the task to create a new user. On the manage users page where only the administrator has access
+the add user function displays an immediate response and the administrator can see immediately the list of users. On the register new user page similarly a new user is created by the administrator but is taken to the login page.
+I have decided to leave the page on the site in case in the future the administrator may decide to allow new users to create their own registration details.
+
+
 
 I have removed the link from the bottom of the login page to the register page to restrict access to the that page to the administrator or service manager
  
