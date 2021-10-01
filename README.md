@@ -24,7 +24,7 @@ Here is the deployed version on the site:
 - [**Features**](#features)     
 - [**Technologies Used**](#technologies-used)
 - [**Testing**](#testing)	
-- [**Bugs**](#bugs)
+- [**Errors**](#errors)
 - [**Deployment**](#deployment)
 - [**Credits**](#credits)
 - [Content](#content)
@@ -282,7 +282,7 @@ Javascript code was checked on
   -  [jshint](https://jshint.com/)
  
 
-## Bugs
+## Errors
 
 While not exactly a bug I had considered adding an extra page to look up the passwords in case somebody had forgotten theirs, but was unable to find a way to do that and after some searching I found this article and it provided a solution. The Manage Passwords page which I had created was based on the Manage Users page showing the username and their password which I had retrieved from the database. The problem was that the hashed password was retrieved from the database. The key point being that a hashed function is a one way function that cannot work in reverse. It explains why when you forget your password for a particular site they always get you to create a new one.
 
@@ -292,7 +292,11 @@ From Wikipedia:
 
 Leaving aside potential vulnerabilities, there's no way to get the original data that produced the hash. And that's the idea. If some bad guy get access to your database, he won't be able to know your users' passwords.
 
+'''Error: Duplicate attribute class.
 
+At line 74, column 96
+
+validate" class="validate" required'''
 
 [StackOverflow](https://stackoverflow.com/questions/48919200/github-pages-only-showing-readme-file) whilst trying to deploy I could only see my ReadMe on Github Pages
 
