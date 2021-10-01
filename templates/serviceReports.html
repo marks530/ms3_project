@@ -39,20 +39,14 @@
             <div class="col s12 m10">
                 <div class="card light-blue darken-1">
                     <div class="card-content white-text">
-                    <span class="card-title">Customer Name:  {{ serviceReport.customer_name}}</span>
-                    <section><option hidden> value="{{ serviceReport.customer_name }}" selected>"{{ serviceReport.customer_name }}"</option></section>
-                    <span class="card-title">Engineer Name:  {{ serviceReport.engineer_name}}</span>
-                    <section><option hidden> value="{{ serviceReport.engineer_name }}" selected>"{{ serviceReport.engineer_name }}"</option></section>
-                    <span class="card-title">Date Received:  {{ serviceReport.date_received}}</span>
-                    <span class="card-title">Machine Type:  {{ serviceReport.machine_type}}</span>
-                    <section><option hidden> value="{{ serviceReport.machine_type }}" selected>"{{ serviceReport.machine_type }}"</option></section>
-                    <span class="card-title">Fault Description:  {{ serviceReport.fault_description}}</span>
-                    <section><option hidden> value="{{ serviceReport.fault_description }}" selected>"{{ serviceReport.fault_description }}"</option></section>
-                    <span class="card-title">Action Taken:  {{ serviceReport.action_taken}}</span>
-                    <section><option hidden> value="{{ serviceReport.action_taken }}" selected>"{{ serviceReport.action_taken }}"</option></section>
-                    <span class="card-title">Parts Used:  {{ serviceReport.parts_used}}</span>
-                    <section><option hidden> value="{{ serviceReport.parts_used }}" selected>"{{ serviceReport.parts_used }}"</option></section>
-                    <span class="card-title">Is Urgent:  {{ serviceReport.is_resolved}}
+                    <span class="card-title">Customer Name: {{ serviceReport.customer_name}}</span>
+                    <span class="card-title">Engineer Name: {{ serviceReport.engineer_name}}</span>
+                    <span class="card-title">Date Received: {{ serviceReport.date_received}}</span>
+                    <span class="card-title">Machine Type: {{ serviceReport.machine_type}}</span>
+                    <span class="card-title">Fault Description: {{ serviceReport.fault_description}}</span>                  
+                    <span class="card-title">Action Taken: {{ serviceReport.action_taken}}</span>                   
+                    <span class="card-title">Parts Used: {{ serviceReport.parts_used}}</span>                    
+                    <span class="card-title">Is Urgent: {{ serviceReport.is_resolved}}
                     {% if serviceReport.is_resolved == "on" %}
                     <i class="material-icons btn tooltipped" data-position="right" data-tooltip="URGENT!">warning</i>
                     {% endif %}
@@ -70,8 +64,7 @@
         </div>
         {% endfor %}
       </div>
-    </li>
-    
+    </li>    
   </ul>
 
 {% endblock %}
