@@ -264,6 +264,9 @@ The following checks were carried out:
 * Check the operation of the base.html and that it is showing the correct links for each user
 * Test link at bottom of register new user page to return user to login page
 * Test link at bottom of login page to return user to register page
+
+
+### Testing after deployment to Heroku
 * After deployment on Heroku I tried logging in as different users on different computers 
 
 
@@ -293,13 +296,13 @@ Leaving aside potential vulnerabilities, there's no way to get the original data
 
 [StackOverflow](https://stackoverflow.com/questions/48919200/github-pages-only-showing-readme-file) whilst trying to deploy I could only see my ReadMe on Github Pages
 
-## Deployment
+## Deployment to Github
 
 Create Github repo 
 
 add links here to deployed site 
 
-  - [deployed site](https://marks530.github.io/Second-Milestone-Project-MS2/index.html)
+  - [deployed site](https://github.com/marks530/ms3_project)
 
 
 **CLI commands** 
@@ -311,6 +314,13 @@ git push
 git status
 
 ``` 
+## Deployment to Heroku
+
+[**The Deployed Heroku site can be found here**](http://ms3-project-heroku.herokuapp.com/) 
+
+*For the **Code Institute testing purposes**, I suggest (at some stage) logging into the site as the **Admin**, using the following details*: 
+- Username: **admin**   
+- Password: **admin99** 
 
 ## Credits 
 
