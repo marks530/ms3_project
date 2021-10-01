@@ -109,7 +109,7 @@ def logout():
 @app.route("/add_record", methods=["GET","POST"])
 def add_record():
     if request.method == "POST":
-        is_resolved = "Yes" if request.form.get("is_resolved") else "No"
+        is_resolved = "on" if request.form.get("is_resolved") else "off"
         report = {
             "engineer_name": request.form.get("username"),
             "customer_name": request.form.get("customer_name"),
@@ -173,10 +173,13 @@ def add_user():
             "password": generate_password_hash(request.form.get("password")),
             "employee_type": request.form.get("employee_type")
         }
-        mongo.db.users.insert_one(user)
-        flash("New User Added")
-        return redirect(url_for("manage_users"))
-               
+        if request.form.get("password") == request.form.get("confirm_password"):
+            mongo.db.users.insert_one(user)
+            flash("New User Added")
+            return redirect(url_for("manage_users"))
+
+        else: 
+            flash("Passwords do not match Add User Unsuccessful!")      
     return render_template("add_user.html")
 
 

@@ -244,8 +244,9 @@ If the administrator chooses to delete a user he/she will be prompted with a con
  ### Testing of the User Options
 The following checks were carried out:
 
+* Test the CRUD operations: create users and reports, view(read) users and reports, update users and reports and delete users and reports.
 * Register a new user with username password and employee type and verify the exact same values were prenent in the database
-* After registration the user is taken back to the login page
+* After registration verify the user is taken back to the login page
 * Login as the administrator and check on the profile page to see who is logged in
 * Login as the administrator and check the navbar for links to all the html pages on the site
 * Login as the a standard user and check the navbar for links to the html pages on the site
