@@ -263,7 +263,7 @@ The following checks were carried out:
 * Check the operation of the base.html and that it is showing the correct links for each user
 * Test link at bottom of register new user page to return user to login page
 * Test link at bottom of login page to return user to register page
-
+* After deployment on Heroku I tried logging in as different users on different computers 
 
 
 As Flask is a framework, there is a requirement to validate the HTML code using the URL to avoid false error flags due to jinja2. 

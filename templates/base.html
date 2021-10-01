@@ -13,7 +13,7 @@
     {% block styles %}
     {% endblock %}
 
-    <title>Record Manager</title>
+    <title>Report Manager</title>
 </head>
 <body>
     <header>
@@ -21,14 +21,14 @@
         <nav class= "nav-extended text-shadow light-blue darken-1">
             <div class="nav-wrapper">
               <a href="{{ url_for('get_serviceReports') }}" style = "margin-left: 25px;" 
-              class="brand-logo">Service Manager</a>
+              class="brand-logo">Service Reports Database</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
               <ul class="right hide-on-med-and-down">
                 
                 {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="{{ url_for('get_serviceReports') }}">Home</a></li>
-                    <li><a href="{{ url_for('add_record') }}">New Record</a></li> 
+                    <li><a href="{{ url_for('get_serviceReports') }}">Service Reports</a></li>
+                    <li><a href="{{ url_for('add_record') }}">New Report</a></li> 
                     {% if session.user|lower == "admin"|lower %}
                         <li><a href="{{ url_for('manage_users') }}">Manage Users</a></li>
                         <li><a href="{{ url_for('manage_passwords') }}">Manage Passwords</a></li>
