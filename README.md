@@ -269,18 +269,34 @@ The following checks were carried out:
 ### Testing after deployment to Heroku
 * After deployment on Heroku I tried logging in as different users on different computers 
 
+As Flask is a framework, there is a requirement to validate the HTML code using the URL to avoid false error flags due to jinja2 so  when passing the code through the W3C validator, instead of using "Validate by Direct Input", it is necessary to 
+"Validate by URI" which means copying the address bar from the Heroku host. As I found out that means a lot more git pushes because in order to test the URL the changes they have to be pushed to git to be reflected on the Heroku host. Even if you are not sure if you have solved the problem it cannot be validated unless the changes have been pushed to git.
 
-As Flask is a framework, there is a requirement to validate the HTML code using the URL to avoid false error flags due to jinja2. 
+
 
 Completed testing of all the html code at the following address 
  -   [W3 Validator](https://validator.w3.org/nu/#textarea) 
 and the css.style file using the css checkbox on the same page 
 On each page I evaluated the navbar, from Desktop to Mobile, watching the behaviour of the dropdown menu on each of the different screens. I also ensured the hamburger dropdown menu was working correctly and in position once it was visible on screen.
 
-
 Javascript code was checked on 
   -  [jshint](https://jshint.com/)
  
+
+Sample Error mesages
+
+'''Error: Duplicate attribute class.
+
+At line 74, column 96
+
+validate" class="validate" required'''
+
+'''Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.
+From line 46, column 5; to line 46, column 13
+der>↩↩    <section>↩     '''
+
+
+
 
 ## Errors
 
@@ -292,11 +308,7 @@ From Wikipedia:
 
 Leaving aside potential vulnerabilities, there's no way to get the original data that produced the hash. And that's the idea. If some bad guy get access to your database, he won't be able to know your users' passwords.
 
-'''Error: Duplicate attribute class.
 
-At line 74, column 96
-
-validate" class="validate" required'''
 
 [StackOverflow](https://stackoverflow.com/questions/48919200/github-pages-only-showing-readme-file) whilst trying to deploy I could only see my ReadMe on Github Pages
 
