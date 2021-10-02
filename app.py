@@ -85,7 +85,6 @@ def login():
             # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
-
     return render_template("login.html")
 
 
@@ -93,7 +92,7 @@ def login():
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+    
     if session["user"]:
         return render_template("profile.html", username=username)
     
@@ -111,7 +110,7 @@ def add_record():
     if request.method == "POST":
         is_resolved = "on" if request.form.get("is_resolved") else "off"
         report = {
-            "engineer_name": request.form.get("username"),
+            "engineer_name": request.form.get("engineer_name"),
             "customer_name": request.form.get("customer_name"),
             "date_received": request.form.get("date_received"),
             "machine_type": request.form.get("machine_type"),
@@ -119,12 +118,12 @@ def add_record():
             "action_taken": request.form.get("action_taken"),
             "parts_used": request.form.get("parts_used"),
             "is_resolved": request.form.get("is_resolved")
-
         }
         mongo.db.serviceReports.insert_one(report)
-        flash("Record Successfully Added")
+        flash("Report Successfully Added")
         return redirect(url_for("get_serviceReports"))
-    usernames = mongo.db.users.find().sort("username", 1)
+      
+    usernames = list(mongo.db.users.find().sort("username", 1))
     return render_template("add_record.html", usernames=usernames)
 
 @app.route("/edit_record/<serviceReport_id>", methods=["GET", "POST"])

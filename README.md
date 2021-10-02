@@ -281,7 +281,7 @@ On each page I evaluated the navbar, from Desktop to Mobile, watching the behavi
 
 Javascript code was checked on 
   -  [jshint](https://jshint.com/)
- 
+
 
 Sample Error mesages
 
