@@ -215,11 +215,11 @@ trying to get one right first.
 **Add Record Page**
 
 - Primarily for use by the service engineer this is the location where they can create new records delete them and mark them as urgent or not.
-The first item in the list is a dropdown selector with the engineers name listed and all of the other fields which are required fields
+The first item in the list is a dropdown selector with the engineers names listed and all of the other fields which are required fields
 
 **Manage Users Page**
 
-- This is the location where the administrator can edit any user either delete the user completely or change the password associated with the user.
+- This is the location where the administrator can edit any user either delete the user completely or change the password associated with the user. He/she can also see at a glance the employee type
 If the administrator chooses to delete a user he/she will be prompted with a confirmation message to confirm or cancel the action.
 
 
@@ -255,6 +255,7 @@ The following checks were carried out:
 * Test the login page for existing user and check that correct flash messages are received
 * Test the login page for unknown user and check that correct flash messages are received
 * Check the login page for min and max lengths and patterns on all fields
+* Check that Engineers Name in New Report limited to engineers only
 * Create a new report and check for validation of min and max length on all fields
 * Verify in the add report page that empty fields are not permitted
 * Verify that new report is reflected in the correct collection in the database
@@ -266,7 +267,11 @@ The following checks were carried out:
 * Test link at bottom of login page to return user to register page
 
 
+
 ### Testing after deployment to Heroku
+
+
+
 * After deployment on Heroku I tried logging in as different users on different computers 
 
 As Flask is a framework, there is a requirement to validate the HTML code using the URL to avoid false error flags due to jinja2 so  when passing the code through the W3C validator, instead of using "Validate by Direct Input", it is necessary to 
@@ -335,8 +340,26 @@ git status
 
 ``` 
 ## Deployment to Heroku
+The project has also been deployed via the master branch and hosted on Heroku. Heroku is a cloud platform that allows for building, developing and operating applications on the cloud [Heroku](https://dashboard.heroku.com/apps) in a range of programming languages. Python was the language used for this project.
 
-[**The Deployed Heroku site can be found here**](http://ms3-project-heroku.herokuapp.com/) 
+The following process was undertaken to successfully deploy the project on the Heroku:
+[**The Deployed Heroku site can be found here**](http://ms3-project-heroku.herokuapp.com/)
+
+The application was created and name simply "ms3-project-heroku" on my Heroku profile. 
+I then had to configure some of the settings. In the *settings* area, I set the `IP: 0.0.0.0` and `PORT: 5000` in the *reveal config vars* section. This is mirrored on my app.py.
+After creating my env.py file which was added to .gitignore file, I added the `MONGO URI` and `SECRET KEY` in to the *reveal config vars* area.
+ 
+Afterwards, and from there on in, I would simply type `heroku login`, which would redirect me to another tab where I would sign in to Heroku as proceed once more in the terminal.
+- The next step was to initialise a git repo and add my Heroku remote repo command: `$ heroku git:remote -a 'datacentric-milestone-bookrev' `. 
+- Heroku requires the following two file
+    - A **requirements.txt** file is needed to run the installed dependencies, so to create and commit this file, the following command was used: `$  pip3 freeze --local > requirements.txt`.
+    - A **Procfile** is needed to direct the Heroku app to the file that it needs to run. So I used the command `$ echo web: python > Procfile` in the terminal to install the file. This was followed by a simple command in the terminal to run the web process: `$ heroku ps:scale web=1`.
+- Finally, to deploy I would use the `$ git push heroku master` to deploy my code on the Heroku app.
+
+After any big changes, advancements on my code, I would push my code to the Heroku app to check if it was functioning. 
+
+
+ 
 
 ***Code Institute testing purposes*** 
 - Username: **admin**   
