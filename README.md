@@ -162,9 +162,20 @@ The design and layout of the site is a plain and simple approach. The informatio
 The records are displayed in large style card that is easy to read and the user can scroll to browse all the entries. This area is also collaspable.
 The manage users page with its list of users and their employee type is also presented in a card format.
 
-On the manage users page and the register new user page there is duplication of the task to create a new user. On the manage users page where only the administrator has access
-the add user function displays an immediate response and the administrator can see immediately the list of users. On the register new user page similarly a new user is created by the administrator but is taken to the login page.
+On the manage users page and the register new user page there is duplication of the task to create a new user. On the manage users page where only the administrator has access the add user function displays an immediate response and the administrator can see immediately the list of users. On the register new user page similarly a new user is created by the administrator but is taken to the login page.
 I have decided to leave the page on the site in case in the future the administrator may decide to allow new users to create their own registration details.
+
+I spent a lot of time trying to list only the engineers names in the select list on the add report page and eventually solved the problem
+The difference was changing the code in the the app.py file from 
+```usernames = (mongo.db.users.find().sort("username", 1))``` to
+```usernames = list(mongo.db.users.find().sort("username", 1)))```
+This small change allowed me access all fields in the users collection of the database and finally this loop produced the correct result
+``` {%for username in usernames %}
+      {% if username.employee_type == "engineer" %}
+          <option value="{{ username.username }}">{{ username.username }}</option> 
+      {% endif %}
+    {% endfor %}) 
+```
 
 
 
