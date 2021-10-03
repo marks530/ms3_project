@@ -186,7 +186,7 @@ I have removed the link from the bottom of the login page to the register page t
 I have in included three desktop wireframes, one for iphone and one for ipad
 Desktop Wireframes:
 
-![alt text](workspace/ms3_project/images/Service Reports.pdf)
+![Desktop Wireframe](static/images/Add_report.png)
 ![alt text](/workspace/ms3_project/images/Add_Report.pdf)
 
 ![alt text]
