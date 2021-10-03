@@ -189,10 +189,10 @@ Desktop Wireframes:
 ![Desktop Wireframe](static/images/Add_report.png)
 
 
-![Ipad wireframe](static/images/Manage_Users_ipad.pdf)
+![Ipad wireframe](static/images/Manage_Users_Ipad.png)
 
 
-![Desktop Wireframe](static/images/Service Reports.pdf)
+![Desktop Wireframe](static/images/Service_Reports_page.png)
 
 
 
