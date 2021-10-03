@@ -187,16 +187,18 @@ I have in included three desktop wireframes, one for iphone and one for ipad
 Desktop Wireframes:
 
 ![Desktop Wireframe](static/images/Add_report.png)
-![alt text](/workspace/ms3_project/images/Add_Report.pdf)
 
-![alt text]
 
-iPad Wireframe:
+![Ipad wireframe](static/images/Manage_Users_ipad.pdf)
 
-![alt text]
 
-iPhone Wireframe:
-![alt text]
+![Desktop Wireframe](static/images/Service Reports.pdf)
+
+
+
+
+
+
 
 ## Features
 
