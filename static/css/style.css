@@ -1,5 +1,5 @@
 body {
-    background-color: aliceblue;
+    
 }
 
 .text-shadow {
@@ -25,4 +25,8 @@ body {
 
 main {
     flex: 1 0 auto;
+}
+
+.testimg {
+    background-image: url("images/andy-holmes-webyw4NsFPg-unsplash.jpg");
 }
