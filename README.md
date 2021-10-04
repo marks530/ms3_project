@@ -361,7 +361,7 @@ but now that I try to recreate the error message I cannot do so. I will leave th
 ![Register Page Second Validation report](static/images/Second_Validation_Register_Page.jpeg)
 
 The second error on the register user page shows the error "Element "option" without attribute label must not be empty. After a running several adjustments without success I discovered 
-a solution on ![Stackoverflow](https://stackoverflow.com/questions/22237658/html5-validation-error-with-select-required-attribute/31800584)
+a solution on [Stackoverflow](https://stackoverflow.com/questions/22237658/html5-validation-error-with-select-required-attribute/31800584)
 Change from this option setting from the Materialize website for the Select option
 
 ```
