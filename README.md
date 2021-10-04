@@ -308,7 +308,7 @@ After restoring some missing div elements the validation process returned the fo
 
  ![Section Error Message](static/images/All_Reports_Validation.jpeg)
 
-This message (a warning message)is returned for all pages and I realised the warning must be on the base.html page, the section for displaying the flash messages
+This message (a warning message) is returned for all pages and I realised the warning must be on the base.html page, the section for displaying the flash messages
 
 ```
 <section>
@@ -322,12 +322,17 @@ This message (a warning message)is returned for all pages and I realised the war
               {% endfor %}
           {% endif %}
       {% endwith %}
-  </section>
+</section>
 
 ```
 
-
 To solve the problem I would have to add a heading to the section but there as is no requirement for this in application I chose to ignore the warning.
+
+![Manage Users Page Validation report](static/images/Manage_Users_Validation.jpeg)
+
+![Register Page Page Validation report](static/images/Register_Page_Validation.jpeg)
+
+![Register Page Second Validation report](static/images/Second_Validation_Register_Page.jpeg)
 
 
 On each page I evaluated the navbar, from Desktop to Mobile, watching the behaviour of the dropdown menu on each of the different screens. I also ensured the hamburger dropdown menu was working correctly and in position once it was visible on screen.
