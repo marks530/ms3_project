@@ -8,139 +8,21 @@
 </head>
 <body>
     <h3 class="light-blue-text text-darken-4 center-align">Add Report</h3>
-
-
-<div class="row card-panel grey lighten-5">
-    <form class="col s12" method="POST" action="#">
-        <!-- user selection -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">build</i>
-                <select id="username" name="username" class="validate" required>
-                  <option value="" disabled selected>Select Engineer Name</option>
-                  
-                        <option value="#"></option>
-                  
-                </select>
-                <label for="username">Engineer</label>
-              </div>
-        </div>
-        <!-- customer name -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="customer_name" name="customer_name" minlength="5" maxlength="50"
-                    type="text" class="validate" required>
-                <label for="customer_name">Customer Name</label>
-            </div>
-        </div>
-        <!-- date received -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">date_range</i>
-                <input id="date_received" name="date_received" type="text" 
-                class="datepicker validate" required>
-                <label for="date_received">Date Received</label>
-            </div>
-            <!-- machine type-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">build</i>
-                    <textarea id="machine_type" name="machine_type" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="machine_type">Machine Type</label>
-                </div>
-            </div>
-            <!-- fault description-->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">build</i>
-                <textarea id="fault_description" name="fault_description" minlength="5"
-                    maxlength="200" class="materialize-textarea validate" required></textarea>
-                <label for="fault_description">Fault Description</label>
-            </div>
-        </div>
-            <!-- action taken -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">build</i>
-                <textarea id="action_taken" name="action_taken" minlength="5"
-                    maxlength="200" class="materialize-textarea validate" required></textarea>
-                <label for="action_taken">Action Taken</label>
-            </div>
-        </div>
-            <!-- parts used -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">build</i>
-                <textarea id="parts_used" name="parts_used" minlength="5"
-                    maxlength="200" class="materialize-textarea validate" required></textarea>
-                <label for="parts_used">Parts Used</label>
-            </div>
-        </div>
-        <!-- is resolved lever -->
-        <div class="row">
-            <div class="input-field col s12">
-                <div class="switch">
-                    <i class="material-icons prefix">error</i>
-                    <label for="is_resolved">
-                        Off
-                        <input type="checkbox" id="is_resolved" name="is_resolved">
-                        <span class="lever"></span>
-                        On
-                    </label>
-                </div>
-            </div>
-        </div>
-        <!-- submit and cancel buttons -->
-        <div class="row">
-            <div class="col s12 center-align">
-                <a href="#" class="btn-large red text-shadow">
-                    Cancel <i class="material-icons prefix">error</i></a>
-                <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                    Add Record<i class="material-icons">date_range</i>
-                </button>
-
-            </div>
-        </div>
-    </form>
-</div>
-
-<div class="row">
-    {% for user in users %}
-    <div class="col s12 m3">
-        <div class="card blue darken-1 text-shadow center-align">
-            <div class="card-content white-text">
-            <span class="card-title">{{ user.username }}</span>
-            {% if user.employee_type|lower == "engineer"|lower%}
-            <span class="card-title">{{ user.username }}</span>
-            {% endif %}
-            </div>
-            <div class="card-action">
-            <a href="{{ url_for('edit_user', user_id=user._id) }}" class="btn green accent-4">Edit</a>
-            <div class="card-action">
-            <a href="{{ url_for('delete_user', user_id=user._id) }}" class="btn red accent-4" 
-            onclick=" return confirm('Are you sure you want to delete the user?')">Remove User</a>
-            </div>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</div>
-
-
+<!-- add employee type -->
 <div class="row">
     <div class="input-field col s12">
-        <i class="material-icons prefix">build</i>
-        <select id="username" name="username" class="validate" required>
-        <option value="" disabled selected>Select Engineer Name</option>
-        
-        {% if user.employee_type|lower == "engineer"|lower%}
-                <option value="{{ username.username }}">{{ username.username }}</option>
-        {% endif %}
+        <i class="material-icons prefix">person_outline</i>
+        <label for="employee_type">Employee Type</label> 
+        <select id="employee_type" name="employee_type" required>
+        <option value="">Choose</option>
+        <option value="engineer">Engineer</option>
+        <option value="sales">Sales</option>
+        <option value="office">Office</option>
         </select>
-        <label for="username">Engineer</label>
+        
     </div>
 </div>
+    
+
 </body>
 </html>
