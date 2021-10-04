@@ -306,10 +306,10 @@ The results of HTML validation process are as follows
 
 After restoring some missing div elements the validation process returned the following message
 
- - [W3 Validator](static/images/All_Reports_Validation.jpeg)
+ - [(static/images/All_Reports_Validation.jpeg)]
 
 This message (a warning message)is returned for all pages and I realised the warning must be on the base.html page, the section for displaying the flash messages
-'''<section>
+```<section>
       <!-- flash messages -->
       {% with messages = get_flashed_messages() %}
           {% if messages %}
@@ -320,7 +320,7 @@ This message (a warning message)is returned for all pages and I realised the war
               {% endfor %}
           {% endif %}
       {% endwith %}
-  </section>'''
+  </section>```
 
   To solve the problem I would have to add a heading to the section but there as is no requirement for this in application I chose to ignore the warning.
 
