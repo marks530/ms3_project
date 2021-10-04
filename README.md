@@ -326,13 +326,41 @@ This message (a warning message) is returned for all pages and I realised the wa
 
 ```
 
-To solve the problem I would have to add a heading to the section but there as is no requirement for this in application I chose to ignore the warning.
+To solve the problem I would have to add a heading to the section but as there is no requirement for this in application I chose to ignore the warning.
 
 ![Manage Users Page Validation report](static/images/Manage_Users_Validation.jpeg)
 
+This validation report revealed a class attribute error which was fixed by removing the large attribute. It could have also been solved by adding a hyphen between btn and large.
+
 ![Register Page Page Validation report](static/images/Register_Page_Validation.jpeg)
 
+This validation report found an error in the textarea element which was fixed by removing the type attribute. I had been getting an unwanted box in the confirm password window
+but now that I try to recreate the error message I cannot do so. I will leave the message in place as a remainder. I have changed the code back to using the correct element "input"
+```
+<!-- confirm password --> 
+    <div class="row">
+        <div class="input-field col s12">
+			<i class="material-icons prefix">password</i>
+            <textarea id="confirm_password" name="confirm_password" minlength="5" 
+             maxlength="15" class="validate" required></textarea>
+            <label for="confirm_password">Password</label>
+        </div>
+    </div>
+```
+
 ![Register Page Second Validation report](static/images/Second_Validation_Register_Page.jpeg)
+
+The second error on the register user page shows the error "Element "option" without attribute label must not be empty. After a running several adjustments without success I discovered 
+a solution on ![Stackoverflow](https://stackoverflow.com/questions/22237658/html5-validation-error-with-select-required-attribute/31800584)
+Change from this option setting from the Materialize website for the Select option
+
+```
+<option value="" disabled selected>Choose your option</option>
+```
+to this option I found on the link named above
+```
+<option value="">Select</option>
+```
 
 
 On each page I evaluated the navbar, from Desktop to Mobile, watching the behaviour of the dropdown menu on each of the different screens. I also ensured the hamburger dropdown menu was working correctly and in position once it was visible on screen.
