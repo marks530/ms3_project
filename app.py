@@ -118,7 +118,7 @@ def add_record():
     if request.method == "POST":
         is_resolved = "on" if request.form.get("is_resolved") else "off"
         report = {
-            "engineer_name": request.form.get("engineer_name"),
+            "engineer_name": request.form.get("username"),
             "customer_name": request.form.get("customer_name"),
             "date_received": request.form.get("date_received"),
             "machine_type": request.form.get("machine_type"),

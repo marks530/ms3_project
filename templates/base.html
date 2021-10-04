@@ -19,7 +19,7 @@
 <body>
     <header>
          <!--Main Navbar-->
-        <nav class= "nav-extended text-shadow red accent-2">
+        <nav class= "nav-extended text-shadow card light-blue darken-1">
             <div class="nav-wrapper">
               <a href="{{ url_for('get_serviceReports') }}"
               class="brand-logo"><i class="material-icons">cloud_circle</i>Database</a>
@@ -68,7 +68,7 @@
           {% if messages %}
               {% for message in messages %}
                   <div class="row flashes">
-                      <h4 class="red accent-1 center-align">{{ message }}</h4>
+                      <h4 class="card light-blue darken-2 center-align">{{ message }}</h4>
                   </div>
               {% endfor %}
           {% endif %}
@@ -78,7 +78,7 @@
     {% block content %}
     {% endblock %}
   </main>
-    <footer class="page-footer text-shadow red accent-2">
+    <footer class="page-footer text-shadow card light-blue darken-1">
             <div class="footer-copyright">
                 <div class="container" style = "margin-bottom: 25px;">
                 © 2021 MS

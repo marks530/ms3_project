@@ -14,8 +14,8 @@
                     <option value="" disabled selected>Engineer Name</option>
                     {% for username in usernames %}
                         {% if username.employee_type == "engineer" %}
-                        <option value="{{ username.username }}">{{ username.username }}</option> 
-                        {% endif %}
+                            <option value="{{ username.username }}">{{ username.username }}</option>
+                        {% endif %} 
                     {% endfor %}
                     </select>
                     <label for="username">Engineer</label>
