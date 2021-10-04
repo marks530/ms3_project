@@ -297,7 +297,20 @@ As Flask is a framework, there is a requirement to validate the HTML code using 
 
 Completed testing of all the html code at the following address 
  -   [W3 Validator](https://validator.w3.org/nu/#textarea) 
-and the css.style file using the css checkbox on the same page 
+and the css.style file using the css checkbox on the same page
+The validation process was carried out on the URL or the "Validate by URI" tab on the W3C Validation Service 
+
+The results of HTML validation process are as follows
+
+#### Service Reports Page
+
+After restoring some missing div elements the validation process returned the following message
+
+[W3 Validator](static/images/All_Reports_Validation.jpeg)
+
+This message (a warning message)is returned for all pages and I realised the warning must be on the 
+
+
 On each page I evaluated the navbar, from Desktop to Mobile, watching the behaviour of the dropdown menu on each of the different screens. I also ensured the hamburger dropdown menu was working correctly and in position once it was visible on screen.
 
 Javascript code was checked on 
