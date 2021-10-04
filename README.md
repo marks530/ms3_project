@@ -186,13 +186,20 @@ I have removed the link from the bottom of the login page to the register page t
 I have in included three desktop wireframes, one for iphone and one for ipad
 Desktop Wireframes:
 
+### Desktop Wireframe Add Report
+
 ![Desktop Wireframe](static/images/Add_report.png)
 
+### Desktop Wireframe Service Reports
+
+![Desktop Wireframe](static/images/Service_Reports_page.png)
+
+### iPad Wireframe  Manage Users
 
 ![Ipad wireframe](static/images/Manage_Users_Ipad.png)
 
 
-![Desktop Wireframe](static/images/Service_Reports_page.png)
+
 
 
 
