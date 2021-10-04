@@ -114,7 +114,7 @@ The database can be customised for each company that uses it with controlled acc
 
 This database contains two collections
 
-* **Users**: contains the Username and a Password ([Hashed](https://werkzeug.palletsprojects.com/en/1.0.x/utils/) 
+* **Users**: contains the Username and a Password ([Hashed](https://werkzeug.palletsprojects.com/en/1.0.x/utils/))
 
 * **serviceReports**: containing all the data with the following fields Customer Name, Engineer Name, Date, Machine Type, Fault Deacription, Action Taken
 and Parts Used. The last field shows unresolved service calls and marks them urgent
@@ -167,9 +167,15 @@ I have decided to leave the page on the site in case in the future the administr
 
 I spent a lot of time trying to list only the engineers names in the select list on the add report page and eventually solved the problem
 The difference was changing the code in the the app.py file from 
-```usernames = (mongo.db.users.find().sort("username", 1))``` to
-```usernames = list(mongo.db.users.find().sort("username", 1)))```
-This small change allowed me access all fields in the users collection of the database and finally this loop produced the correct result
+```
+usernames = (mongo.db.users.find().sort("username", 1))
+``` 
+to
+```
+usernames = list(mongo.db.users.find().sort("username", 1)))
+```
+This small change, adding "list" to the statement allowed me access all fields in the users collection of the database and finally this loop produced the correct result
+
 ``` {%for username in usernames %}
       {% if username.employee_type == "engineer" %}
           <option value="{{ username.username }}">{{ username.username }}</option> 
