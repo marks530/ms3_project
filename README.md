@@ -306,9 +306,10 @@ The results of HTML validation process are as follows
 
 After restoring some missing div elements the validation process returned the following message
 
- - [(static/images/All_Reports_Validation.jpeg)]
+ ![Section Error Message](static/images/All_Reports_Validation.jpeg)
 
 This message (a warning message)is returned for all pages and I realised the warning must be on the base.html page, the section for displaying the flash messages
+
 ```<section>
       <!-- flash messages -->
       {% with messages = get_flashed_messages() %}
@@ -322,7 +323,8 @@ This message (a warning message)is returned for all pages and I realised the war
       {% endwith %}
   </section>```
 
-  To solve the problem I would have to add a heading to the section but there as is no requirement for this in application I chose to ignore the warning.
+
+To solve the problem I would have to add a heading to the section but there as is no requirement for this in application I chose to ignore the warning.
 
 
 On each page I evaluated the navbar, from Desktop to Mobile, watching the behaviour of the dropdown menu on each of the different screens. I also ensured the hamburger dropdown menu was working correctly and in position once it was visible on screen.
