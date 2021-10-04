@@ -262,8 +262,12 @@ If the administrator chooses to delete a user he/she will be prompted with a con
 
  I have divided the testing of the application in to three sections
  The first consists of checking the operation of all of the options available to the user and verifying that they are behaving as intended and the second section is checking the code for errors and good coding practices and of course validation. The third section is testing the application in different browsers and different screen sizes and finally on Windows machines and Macs.
+ For the purposes of testing the application I have given all the users the same password "IPS123"
 
  ### Testing of the User Options
+
+ 
+
 The following checks were carried out:
 
 * Test the CRUD operations: create users and reports, view(read) users and reports, update users and reports and delete users and reports.
@@ -373,9 +377,9 @@ to this option I found on the link named above
 <option value="">Select</option>
 ```
 
-#### Profile New Report and Login pages
+#### Profile, New Report and Login pages
 
-Apart from teh smaee errors for the smae pieces of code these pages did not generate any new errors.
+Apart from the same errors for the same pieces of code these pages did not generate any new errors.
 
 
 On each page I evaluated the navbar, from Desktop to Mobile, watching the behaviour of the dropdown menu on each of the different screens. I also ensured the hamburger dropdown menu was working correctly and in position once it was visible on screen.
@@ -397,20 +401,16 @@ This message remainded me that I had added this code at some stage in the develo
 45	toggleModal
 
 
+### Python Checking
 
-Sample Error mesages
+For this purpose i used the Python code checker at [Python Code Check](http://pep8online.com/)
 
-'''Error: Duplicate attribute class.
+The result containing a sample of the error is below
 
-At line 74, column 96
+[Python Code Check Result](static/images/PEP8_online_code_check.jpeg)
 
-validate" class="validate" required'''
 
-'''Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.
-From line 46, column 5; to line 46, column 13
-der>↩↩    <section>↩     '''
-
-Foound that this piece of css code keeps the footer at the base of each page
+Found that this piece of css code keeps the footer at the base of each page
 
 '''main {
     flex: 1 0 auto;
@@ -455,33 +455,35 @@ The project has also been deployed via the master branch and hosted on Heroku. H
 The following process was undertaken to successfully deploy the project on the Heroku:
 [**The Deployed Heroku site can be found here**](http://ms3-project-heroku.herokuapp.com/)
 
+- Heroku requires the following two files
+    - A **requirements.txt** file is needed to run the installed dependencies, so to create and commit this file, the following command was used: 
+    `$  pip3 freeze --local > requirements.txt`.
+    - A **Procfile** is needed to direct the Heroku app to the file that it needs to run. Use the echo command the output the string
+    `$  echo web: python app.py > Procfile`
+    Remove the blank line to avoid problems running on Heroku.
+
 The application was created and name simply "ms3-project-heroku" on my Heroku profile. 
-I then had to configure some of the settings. In the *settings* area, I set the `IP: 0.0.0.0` and `PORT: 5000` in the *reveal config vars* section. This is mirrored on my app.py.
-After creating my env.py file which was added to .gitignore file, I added the `MONGO URI` and `SECRET KEY` in to the *reveal config vars* area.
- 
-Afterwards, and from there on in, I would simply type `heroku login`, which would redirect me to another tab where I would sign in to Heroku as proceed once more in the terminal.
-- The next step was to initialise a git repo and add my Heroku remote repo command: `$ heroku git:remote -a 'datacentric-milestone-bookrev' `. 
-- Heroku requires the following two file
-    - A **requirements.txt** file is needed to run the installed dependencies, so to create and commit this file, the following command was used: `$  pip3 freeze --local > requirements.txt`.
-    - A **Procfile** is needed to direct the Heroku app to the file that it needs to run. 
-- Finally, to deploy I would use the `$ git push heroku master` to deploy my code on the Heroku app.
+Set up automatic deployment to GitHub using the "Connect to GitHub" method as the Deployment method.
+But before setting *Enable Automatic Deployment* click on the Settings tab and  select *Reveal Config Vars* to securely tell Heroku which variables are required
+I then had to configure some of the settings, I set the `IP: 0.0.0.0` and `PORT: 5000`. This is mirrored on my app.py.
+After creating my env.py file which was added to .gitignore file, I added the `MONGO URI`, `MONGO_DBNAME` and `SECRET KEY` in to the *reveal config vars* area.
+
+- Finally, select *Enable Automatic Deployment*  to deploy my code from GitHub to the Heroku app.
 
 After any big changes, advancements on my code, I would push my code to the Heroku app to check if it was functioning. 
 
+With application running on Heroku the admin log in details are as follows
 
- 
-
-***Code Institute testing purposes*** 
 - Username: **admin**   
 - Password: **IPS123** 
 
 ## Credits 
 
-- I found [w3schools](https://www.w3schools.com//) to be extremely helpful
+- I found [w3schools](https://www.w3schools.com//) to be very helpful
 
 - [css-tricks](https://css-tricks.com//) was another site I found to be useful
 
-- [Bootstrap 4](https://getbootstrap.com/docs/4.1/components/) documents proved to be 
+- [Corey Schafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g) as always very informative
 
 - [Javascript docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
