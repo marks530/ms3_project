@@ -302,7 +302,7 @@ The validation process was carried out on the URL or the "Validate by URI" tab o
 
 The results of HTML validation process are as follows
 
-#### Service Reports Page
+#### Service Reports Page Validation
 
 After restoring some missing div elements the validation process returned the following message
 
@@ -328,9 +328,13 @@ This message (a warning message) is returned for all pages and I realised the wa
 
 To solve the problem I would have to add a heading to the section but as there is no requirement for this in application I chose to ignore the warning.
 
+#### Manage Users Page Validation
+
 ![Manage Users Page Validation report](static/images/Manage_Users_Validation.jpeg)
 
 This validation report revealed a class attribute error which was fixed by removing the large attribute. It could have also been solved by adding a hyphen between btn and large.
+
+#### Register/Add User Validation
 
 ![Register Page Page Validation report](static/images/Register_Page_Validation.jpeg)
 
@@ -358,15 +362,34 @@ Change from this option setting from the Materialize website for the Select opti
 <option value="" disabled selected>Choose your option</option>
 ```
 to this option I found on the link named above
+
 ```
 <option value="">Select</option>
 ```
 
+#### Profile New Report and Login pages
+
+Apart from teh smaee errors for the smae pieces of code these pages did not generate any new errors.
+
 
 On each page I evaluated the navbar, from Desktop to Mobile, watching the behaviour of the dropdown menu on each of the different screens. I also ensured the hamburger dropdown menu was working correctly and in position once it was visible on screen.
 
-Javascript code was checked on 
+Jquery code was checked on 
   -  [jshint](https://jshint.com/)
+
+I tested the Jquery code on JSHint and got the following report with two warnings and an unused variable
+
+> ES6 refers to version 6 of the ECMA Script programming language. ... It is a major enhancement to the JavaScript language, and adds many more features intended to make large-scale software development easier. ECMAScript, or ES6, was published in June 2015. It was subsequently renamed to ECMAScript 2015
+
+>Two warnings
+18	'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+19	'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+
+This message remainded me that I had added this code at some stage in the development but had not used it. I have removed this code block.
+
+>One unused variable
+45	toggleModal
+
 
 
 Sample Error mesages
@@ -400,7 +423,7 @@ Leaving aside potential vulnerabilities, there's no way to get the original data
 
 
 
-[StackOverflow](https://stackoverflow.com/questions/48919200/github-pages-only-showing-readme-file) whilst trying to deploy I could only see my ReadMe on Github Pages
+![StackOverflow](https://stackoverflow.com/questions/48919200/github-pages-only-showing-readme-file) whilst trying to deploy I could only see my ReadMe on Github Pages
 
 ## Deployment to Github
 
@@ -434,7 +457,7 @@ Afterwards, and from there on in, I would simply type `heroku login`, which woul
 - The next step was to initialise a git repo and add my Heroku remote repo command: `$ heroku git:remote -a 'datacentric-milestone-bookrev' `. 
 - Heroku requires the following two file
     - A **requirements.txt** file is needed to run the installed dependencies, so to create and commit this file, the following command was used: `$  pip3 freeze --local > requirements.txt`.
-    - A **Procfile** is needed to direct the Heroku app to the file that it needs to run. So I used the command `$ echo web: python > Procfile` in the terminal to install the file. This was followed by a simple command in the terminal to run the web process: `$ heroku ps:scale web=1`.
+    - A **Procfile** is needed to direct the Heroku app to the file that it needs to run. 
 - Finally, to deploy I would use the `$ git push heroku master` to deploy my code on the Heroku app.
 
 After any big changes, advancements on my code, I would push my code to the Heroku app to check if it was functioning. 
