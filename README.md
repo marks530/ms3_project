@@ -156,7 +156,7 @@ The goal of this milestone project was to create a web application using **Pytho
 **(3) Update** - change and edit pre-existing database data.
 **(4) Delete** - completely remove data from database
 
-## Design Choice     
+## Design Choices     
 
 The design and layout of the site is a plain and simple approach. The information is presented in a card format taken from the Materialize website and the Mini Project on the CI course.
 The records are displayed in large style card that is easy to read and the user can scroll to browse all the entries. This area is also collaspable.
