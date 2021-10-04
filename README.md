@@ -17,7 +17,7 @@ Here is the deployed version on the site:
 - [**User Goals**](#user-goals)
 - [**User Stories**](#user-stories)
 - [**Site Owner Goals**](#site-owner-goals)
-- [**Database**](#db)
+- [**Database**](#database)
 - [**UX**](#ux)
 - [**Design Choices**](#design-choices)
 - [**Wireframes**](#wireframes)
