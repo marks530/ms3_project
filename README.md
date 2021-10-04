@@ -4,11 +4,15 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 <h1 style="text-align:center">Python and Data Centric Developement Milestone 3 Project</h1> 
-<h2 style="text-align:center">Create a Service Department Database :robot: :engineer: </h2>
+<h2 style="text-align:center">Create a Service Department Database :robot:</h2>
 
 
 Here is the deployed version on the site:
 **[Service Database](http://ms3-project-heroku.herokuapp.com)**
+
+Administrator Credentials:
+- Username: **admin**   
+- Password: **IPS123** 
 
 # **Table of Contents**
 
@@ -266,7 +270,6 @@ If the administrator chooses to delete a user he/she will be prompted with a con
 
  ### Testing of the User Options
 
- 
 
 The following checks were carried out:
 
@@ -295,7 +298,6 @@ The following checks were carried out:
 
 
 ### Testing after deployment to Heroku
-
 
 
 * After deployment on Heroku I tried logging in as different users on different computers 
