@@ -196,10 +196,6 @@ Desktop Wireframes:
 
 
 
-
-
-
-
 ## Features
 
 **Site Structure by HTML pages**

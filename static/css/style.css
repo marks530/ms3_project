@@ -1,5 +1,7 @@
 body {
-    
+    background-image: url("static/images/andy-holmes-webyw4NsFPg-unsplash.jpg");
+    height: 400px;
+    width: auto;
 }
 
 .text-shadow {
@@ -27,6 +29,6 @@ main {
     flex: 1 0 auto;
 }
 
-.testimg {
-    background-image: url("images/andy-holmes-webyw4NsFPg-unsplash.jpg");
+.img {
+    opacity: 50%;
 }
