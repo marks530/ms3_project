@@ -11,7 +11,7 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">build</i>
                     <select id="username" name="username" class="validate" required>
-                    <option value="" disabled selected>Select Engineer Name</option>
+                    <option value="" disabled selected>Engineer Name</option>
                     {% for username in usernames %}
                         {% if username.employee_type == "engineer" %}
                         <option value="{{ username.username }}">{{ username.username }}</option> 
