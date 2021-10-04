@@ -321,7 +321,8 @@ This message (a warning message)is returned for all pages and I realised the war
               {% endfor %}
           {% endif %}
       {% endwith %}
-  </section>```
+  </section>
+  ```
 
 
 To solve the problem I would have to add a heading to the section but there as is no requirement for this in application I chose to ignore the warning.
