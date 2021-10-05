@@ -514,27 +514,14 @@ With application running on Heroku the admin log in details are as follows
 
 - [Corey Schafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g) as always very informative
 
-- [Javascript docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
+The Data Centric Design Mini-Project forms the basis for the project so the site and application are based largely on it. So huge credit to Tim Nelson for that
 
-
-The Data Centric Design Mini-Project forms the basis for the project so the site and application are based largely on it. So credit to Tim Nelson for that
-
-## Content
-
-
-
-**Code Snippet Example - continue**
-
-```
-
-```
-## Acknowledgements
 
 ## Footnote
 
-I found this project challenging and very time consuming. I spent the vast bulk of the time writing and testing my JavaScript code and that was at the expense of the look and feel of the site. I intend to work on the project in the coming weeks while it is still fresh in my mind.
-Nevertheless I found the whole project both fascinating and in the end had a real sense of achievement 
+I found this project challenging and very time consuming. I spent the vast bulk of the time writing and testing the application code and that was at the expense of the look and feel of the site. I intend to work on the project in the coming weeks while it is still fresh in my mind.
+Again I found the whole project very interesting and am so impressed with the creative possibilites that can be achieved.
 
 
 
