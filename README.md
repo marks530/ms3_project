@@ -33,8 +33,6 @@ For the purposes of testing I have given all the users the same password **IPS12
 - [**Errors**](#errors)
 - [**Deployment**](#deployment)
 - [**Credits**](#credits)
-- [Content](#content)
-- [Acknowledgements](#acknowledgements)
 - [**Footnote**](#footnote) 
 
 ## Project Introduction
