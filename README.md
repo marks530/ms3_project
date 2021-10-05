@@ -81,7 +81,9 @@ view any outstanding service calls. The "parts used" section of the database is 
 ## User Stories
 
 The Service Manager as administrator of the application will be responsible for introducing new users to the application and creating their user accounts and passwords. Each time a new user requires access to the web app the manager creates a new account and issue the credentials to the new user.
-He is the only user with full access to the databable and have the ability to delete accounts and records.
+He is the only user with full access manage users of the databable and have the ability to delete accounts.
+The service engineer is the only user with ability to edit and/or delete their own records.
+Any user can create a record but any record created can only be allocated to a service engineer.
 
 The service engineer will be the main user of the application. He/she will be able to
 
