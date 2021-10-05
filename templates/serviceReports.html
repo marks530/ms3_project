@@ -46,7 +46,7 @@
                     <span class="card-title">Action Taken: {{ serviceReport.action_taken}}</span>                   
                     <span class="card-title">Parts Used: {{ serviceReport.parts_used}}</span>                    
                     <span class="card-title">Is Urgent: {{ serviceReport.is_resolved}}
-                    {% if serviceReport.is_resolved == "on" %}
+                    {% if serviceReport.is_resolved == "yes" %}
                     <i class="material-icons btn tooltipped" data-position="right" data-tooltip="URGENT!">warning</i>
                     {% endif %}
                     </span>     

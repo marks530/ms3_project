@@ -87,6 +87,8 @@ The service engineer will be the main user of the application. He/she will be ab
 * Before making an on-site service call check the history of previous calls parts used and action taken
 * Check the service history of similar machines by searching using "machine_type
 * Check to see parts used on the machine type
+* Only the service engineer can edit or remove his/her own report.
+* The administrator can also do this but only by logging in as an engineer.
 
 The office staff and HR staff will also have limited access to the database to carry out the following tasks
 
@@ -403,13 +405,25 @@ This message remainded me that I had added this code at some stage in the develo
 45	toggleModal
 
 
-### Python Checking
+### Python Checking PEP8
 
 For this purpose i used the Python code checker at [Python Code Check](http://pep8online.com/)
 
 The result containing a sample of the error is below
 
-[Python Code Check Result](static/images/PEP8_online_code_check.jpeg)
+![Python Code Check Result](static/images/PEP8_online_code_check.jpeg)
+
+The errors consisted of the following
+* trailing whitespace errors at the end of line
+* unexpected spaces around keywords
+* lines to long
+* too many blanks lines
+* continuation line with the same indent as the next logical line
+
+The last error type proved quite difficult to deal with as I started getting some errors in the application when I made some changes.
+As a consequence I have left some of the lines too long (> than 79 characters) to avoid any erros in the code.
+I will rectify this when I have more time.
+
 
 
 Found that this piece of css code keeps the footer at the base of each page
