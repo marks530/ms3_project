@@ -21,6 +21,8 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+""" This function is used to read the service reports from the 
+serviceReports collection in the Mongodb """
 
 @app.route("/")
 @app.route("/get_serviceReports")
@@ -29,6 +31,8 @@ def get_serviceReports():
     return render_template(
         "serviceReports.html", serviceReports=serviceReports)
 
+""" This function is used to search the database using the customer name
+and machine type parameters """
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -38,6 +42,8 @@ def search():
     return render_template(
         "serviceReports.html", serviceReports=serviceReports)
 
+""" This function is used by the administrator only to create a new user
+and password with a confirm password check. The employee type is also logged """
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -68,6 +74,8 @@ def register():
             # return user to register page after unsuccessful registration
     return render_template("register.html")
 
+""" The login function gives the user access to the database and checks their 
+credentials """
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -93,6 +101,8 @@ def login():
             return redirect(url_for("login"))
     return render_template("login.html")
 
+
+""" This function confirms the logged in user """
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):

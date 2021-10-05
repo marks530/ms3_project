@@ -14,6 +14,8 @@ Administrator Credentials:
 - Username: **admin**   
 - Password: **IPS123** 
 
+For the purposes of testing I have given all the users the same password **IPS123**
+
 # **Table of Contents**
 
 - [**Project Introduction**](#project-introduction)
@@ -33,7 +35,8 @@ Administrator Credentials:
 - [**Credits**](#credits)
 - [Content](#content)
 - [Acknowledgements](#acknowledgements)
-- [**Footnote**](#footnote)    
+- [**Footnote**](#footnote) 
+
 ## Project Introduction
 The web application created for the project Python and Data Centric Developement Milestone 3 is designed for engineering companies who have a sales and service team. From my previous experience working as a service engineer I realise the value of having a record of every service call and the actions taken to resolve each problem. A database that recorded the service history each piece of equipment with the customer infomation would be a huge asset to these companies
 
@@ -421,7 +424,7 @@ The errors consisted of the following
 * continuation line with the same indent as the next logical line
 
 The last error type proved quite difficult to deal with as I started getting some errors in the application when I made some changes.
-As a consequence I have left some of the lines too long (> than 79 characters) to avoid any erros in the code.
+As a consequence I have left some of the lines too long (> than 79 characters) to avoid any errors in the code.
 I will rectify this when I have more time.
 
 
@@ -432,8 +435,18 @@ Found that this piece of css code keeps the footer at the base of each page
     flex: 1 0 auto;
 }'''
 
+I have tested the application on my Mac with Chrome Safari and Firefox and everything worked as it should on the different screens sizes. I also used the application with an iPad and it 
+functioned correctly in landscape an portrait mode. I also tested the application on a Windows laptop using Chrome and Edge browsers and everything looked fine. On all the browsers at the different screen sizes the app was responsive.
 
 ## Errors
+
+There may be some confusion around the use of function names and page headers in the application. The words **records** and **reports** are effectively interchangeable. 
+I will have to correct this at a later stage.
+
+Despite all the browsers showing the correct layout the iphone size there is a problem on the actual iphone 6. The navbar header "Database" falls out of the navbar and into the space below.
+I will have to correct this at a later stage.
+
+I had some diffuculty with the Urgent setting. When the setting is set to off the value stored in the database is set to none. I will have to fix this at a later stage.
 
 While not exactly a bug I had considered adding an extra page to look up the passwords in case somebody had forgotten theirs, but was unable to find a way to do that and after some searching I found this article and it provided a solution. The Manage Passwords page which I had created was based on the Manage Users page showing the username and their password which I had retrieved from the database. The problem was that the hashed password was retrieved from the database. The key point being that a hashed function is a one way function that cannot work in reverse. It explains why when you forget your password for a particular site they always get you to create a new one.
 
